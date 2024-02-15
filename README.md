@@ -1,4 +1,6 @@
-*I encourage someone to fork this repository and make it work with Quarto!* :)
+# Warning
+**Work in progress**
+** Just forked from oxforddown**
 
 # How to cite
 If you use this template to write your thesis, please cite it! :smiling_face_with_three_hearts: (and/or click 'Sponsor' and buy me a coffee... :wink: )
@@ -7,14 +9,14 @@ If you use this template to write your thesis, please cite it! :smiling_face_wit
 
 
 ``` bibtex
-@misc{lyngsOxforddown2019,
-  author = {Lyngs, Ulrik},
-  title = {oxforddown: An Oxford University Thesis Template for R Markdown},
-  year = {2019},
+@misc{Martin_bio_uO_down_2024,
+  author = {Martin, Julien},
+  author = {Dumas, Michela},
+  title = {bio_uO_down: An uOttawa Thesis Template for Quarto},
+  year = {2024},
   publisher = {GitHub},
   journal = {GitHub repository},
-  howpublished = {\url{https://github.com/ulyngs/oxforddown}},
-  doi = {10.5281/zenodo.3484681},
+  howpublished = {\url{https://github.com/juliengamartin/bio_uO_down}}
 }
 ```
 
