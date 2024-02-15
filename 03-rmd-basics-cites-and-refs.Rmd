@@ -40,9 +40,9 @@ To default way to cite an entry in your text is with this syntax: `[@citation-id
 So I might cite some things [@Shea2014; @Lottridge2012; @Mill1965].
 
 ### Appearance of citations and references section (pandoc) {#citation-appearance}
-By default, `oxforddown` lets [Pandoc](https://pandoc.org) handle how citations are inserted in your text and the references section.
+By default, `bio_uO_down` lets [Pandoc](https://pandoc.org) handle how citations are inserted in your text and the references section.
 You can change the appearance of citations and references by specifying a CSL (Citation Style Language) file in the `csl` metadata field of **index.Rmd**.
-By default, `oxforddown` by the Americal Psychological Association (7th Edition), which is an author-year format.
+By default, `bio_uO_down` by the Americal Psychological Association (7th Edition), which is an author-year format.
 
 With this style, a number of variations on the citation syntax are useful to know:
 

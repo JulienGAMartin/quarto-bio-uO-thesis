@@ -19,7 +19,7 @@ There is grandeur in this view of life, with its several powers, having been ori
 
 <!-- LaTeX normally does not indent the first line after a heading - however, it does so after the mini table of contents. You can manually tell it not to with \noindent -->
 
-\noindent This chapter describes a number of additional tips and tricks as well as possible customizations to the `oxforddown` thesis.
+\noindent This chapter describes a number of additional tips and tricks as well as possible customizations to the `bio_uO_down` thesis.
 
 ## Chunk caching and the **\_bookdown\_files** folder
 If you set `cache=TRUE` in a code chunk, in order to cache its results if it's time-consuming to run see [the R Markdown documentation](https://bookdown.org/yihui/rmarkdown-cookbook/cache.html), then the files for the caching are stored in the **_bookdown_files** folder.
@@ -167,7 +167,7 @@ knitr::include_graphics("figures/sample-content/pdf_embed_example/Lyngs2020_FB.p
 <br>
 
 In LaTeX output, however, this approach can cause odd behaviour.
-Therefore, when you build your thesis to PDF, split the PDF into an alphanumerically sorted sequence of **single-page** PDF files (you can do this automatically with the package `pdftools`). You can then use the appropriate LaTeX command to insert them, as shown below (for brevity, in the `oxforddown` PDF sample content we're only including two pages).
+Therefore, when you build your thesis to PDF, split the PDF into an alphanumerically sorted sequence of **single-page** PDF files (you can do this automatically with the package `pdftools`). You can then use the appropriate LaTeX command to insert them, as shown below (for brevity, in the `bio_uO_down` PDF sample content we're only including two pages).
 *Note that the chunk option `results='asis'` must be set.*
 You may also want to remove margins from the PDF files, which you can do with Adobe Acrobat (paid version) and likely other software.
 
@@ -181,7 +181,7 @@ You may also want to remove margins from the PDF files, which you can do with Ad
 pages <- list.files("figures/sample-content/pdf_embed_example/split", full.names = TRUE)
 
 # set how wide you want the inserted PDFs to be: 
-# 1.0 is 100 per cent of the oxforddown PDF page width;
+# 1.0 is 100 per cent of the bio_uO_down PDF page width;
 # you may want to make it a bit bigger
 pdf_width <- 1.2
 
@@ -206,7 +206,7 @@ There are four main steps:
 1. Make figure widths correct
 
 ### An example paper in another folder
-Take this simple example (files for this are in [this GitHub repository](https://github.com/ulyngs/oxforddown-external-article)):
+Take this simple example (files for this are in [this GitHub repository](https://github.com/ulyngs/bio_uO_down-external-article)):
 
 ```markdown 
 |--paper_to_include
@@ -424,7 +424,7 @@ At the time of writing, you must set this directly in **template.tex** rather th
 
 ## Customising to a different university
 ### The minimal route
-If the front matter in the OxThesis LaTeX template is suitable to your university, customising `oxforddown` to your needs could be as simple as putting the name of your institution and the path to your university's logo in **index.Rmd**:
+If the front matter in the OxThesis LaTeX template is suitable to your university, customising `bio_uO_down` to your needs could be as simple as putting the name of your institution and the path to your university's logo in **index.Rmd**:
 
 ```yaml
 university: University of You
@@ -433,7 +433,7 @@ university-logo: figures/your-logo-here.pdf
 
 ### Replacing the entire title page with your required content
 If you have a **.tex** file with some required front matter from your university that you want to replace the OxThesis template's title page altogether, you can provide a filepath to this file in **index.Rmd**.
-`oxforddown`'s sample content includes and example of this --- if you use the YAML below, your front matter will look like this:
+`bio_uO_down`'s sample content includes and example of this --- if you use the YAML below, your front matter will look like this:
 
 ```yaml
 alternative-title-page: front-and-back-matter/alt-title-page-example.tex

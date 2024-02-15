@@ -25,7 +25,7 @@ output:
   #     - templates/corrections.css # remove to stop highlighting corrections
   #   theme:
   #     primary: "#6D1919"
-  #   repo: https://github.com/ulyngs/oxforddown
+  #   repo: https://github.com/ulyngs/bio_uO_down
   #   pandoc_args: "--lua-filter=scripts_and_filters/colour_and_highlight.lua"
   # bookdown::gitbook:
   #   css: templates/style.css
@@ -42,8 +42,8 @@ output:
 ## thesis metadata ##
 #####################
 title: |
-  `oxforddown`: \
-  An Oxford University Thesis \
+  `bio_uO_down`: \
+  An uOttawa Biology Thesis \
   Template for R Markdown
 author: Author Name
 college: Your College

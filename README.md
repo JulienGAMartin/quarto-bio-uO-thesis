@@ -1,6 +1,6 @@
 # Warning
 **Work in progress**
-** Just forked from oxforddown**
+** Just forked from bio_uO_down**
 
 # How to cite
 If you use this template to write your thesis, please cite it! :smiling_face_with_three_hearts: (and/or click 'Sponsor' and buy me a coffee... :wink: )
@@ -38,15 +38,15 @@ If you use this template to write your thesis, please cite it! :smiling_face_wit
     -   [Gotchas](#gotchas)
     -   [Output formats](#output-formats)
 
-# Oxforddown
+# bio_uO_down
 
-A template for writing an Oxford University thesis in R Markdown.
+A template for writing an uOttawa Biology thesis in R Markdown.
 The template uses the [bookdown](https://bookdown.org) R package together with the [OxThesis LaTeX template](https://github.com/mcmanigle/OxThesis), plus lots of inspiration from [thesisdown](https://github.com/ismayc/thesisdown).
 
--   [Sample PDF output](https://github.com/ulyngs/oxforddown/blob/master/docs/_main.pdf)
--   [Sample BS4 book output](https://ulyngs.github.io/oxforddown/)
+-   [Sample PDF output](https://github.com/ulyngs/bio_uO_down/blob/master/docs/_main.pdf)
+-   [Sample BS4 book output](https://ulyngs.github.io/bio_uO_down/)
 
-Examples of theses written with `oxforddown` (see also [Google Scholar](https://scholar.google.dk/scholar?oi=bibs&hl=en&cites=14343601209555768076)):
+Examples of theses written with `bio_uO_down` (see also [Google Scholar](https://scholar.google.dk/scholar?oi=bibs&hl=en&cites=14343601209555768076)):
 
 -   [Ulysses in Cyberspace: Examining the Effectiveness of Design Patterns for Digital Self-Control](https://ulyngs.github.io/phd-thesis/) by [Ulrik Lyngs](https://ulriklyngs.com)
 -   [The impact of heat on occupational injuries, illnesses and associated economic costs in Australia](https://digital.library.adelaide.edu.au/dspace/bitstream/2440/137773/1/Borg2022_PhD.pdf) by Matthew Anthony Borg
@@ -56,7 +56,7 @@ Examples of theses written with `oxforddown` (see also [Google Scholar](https://
 -   [Modeling of nutrient dynamics in an urbanized tropical estuary and application to eutrophication risk management](https://drive.google.com/file/d/1UFT8NfDxHqbFnDNOEk3KtV0IYofb5Go8/view) by Nguyen Truong An
 
 
-*NOTE: If you've used this template to write your thesis, drop me a line at [ulrik.lyngs\@cs.ox.ac.uk](mailto:ulrik.lyngs@cs.ox.ac.uk) and I'll add a link showcasing it!*
+*NOTE: If you've used this template to write your thesis, drop me a line at [julien.martin\@uottawa.ca](mailto:julien.martin@uottawa.ca) and I'll add a link showcasing it!*
 
 
 ## Requirements
@@ -69,14 +69,14 @@ Examples of theses written with `oxforddown` (see also [Google Scholar](https://
 
     -   Option 1: Use [TinyTeX](https://yihui.name/tinytex/) (a minimal LaTeX installation intended for use with R Markdown)
 
-        -   the development version of TinyTex is [currently required](https://github.com/ulyngs/oxforddown/issues/4). Install from R with
+        -   the development version of TinyTex is [currently required](https://github.com/ulyngs/bio_uO_down/issues/4). Install from R with
 
         ``` r
         remotes::install_github('yihui/tinytex')
         tinytex::install_tinytex()
         ```
 
-        -   Then install the LaTeX packages used by `oxforddown` (diskspace taken up by TinyTex with the required packages installed is about 280 Mb)
+        -   Then install the LaTeX packages used by `bio_uO_down` (diskspace taken up by TinyTex with the required packages installed is about 280 Mb)
 
         ``` r
         missing_packages <- c(
@@ -104,15 +104,15 @@ Examples of theses written with `oxforddown` (see also [Google Scholar](https://
 
 ## How to use
 
--   download the **ulyngs/oxforddown** repo as a zip
--   open **oxforddown.Rproj** in RStudio
+-   download the **ulyngs/bio_uO_down** repo as a zip
+-   open **bio_uO_down.Rproj** in RStudio
 
 ### How-to chapters
-Read the ['How to use' chapter](https://ulyngs.github.io/oxforddown/how-to-use.html) to understand the structure of `oxforddown` and how to do the basic things like building your thesis.
+Read the ['How to use' chapter](https://ulyngs.github.io/bio_uO_down/how-to-use.html) to understand the structure of `bio_uO_down` and how to do the basic things like building your thesis.
 
 Note: bibliography files cannot have underscores in their names!
 
-For how to use R Markdown syntax in general and in `oxforddown` in particular, read the dedicated chapters on this ([R Markdown basics](https://ulyngs.github.io/oxforddown/rmd-basics.html), [Citations, cross-references, and collaboration](https://ulyngs.github.io/oxforddown/cites-and-refs.html), and [Tables](https://ulyngs.github.io/oxforddown/tables.html)).
+For how to use R Markdown syntax in general and in `bio_uO_down` in particular, read the dedicated chapters on this ([R Markdown basics](https://ulyngs.github.io/bio_uO_down/rmd-basics.html), [Citations, cross-references, and collaboration](https://ulyngs.github.io/bio_uO_down/cites-and-refs.html), and [Tables](https://ulyngs.github.io/bio_uO_down/tables.html)).
 
 See also the general, official R Markdown resources [*R Markdown: The Definitive Guide*](https://bookdown.org/yihui/rmarkdown/) and the [*R Markdown Cookbook*](https://bookdown.org/yihui/rmarkdown-cookbook/).
 
@@ -172,7 +172,7 @@ knit: (function(input, ...) {
 ```
 
 -   NOTE: the [bs4 book output](https://pkgs.rstudio.com/bookdown/reference/bs4_book.html) requires the `downlit` and `bslib` R packages (install them with `install.packages`)
--   Note also that to deploy a BS4 book on GitHub Pages, there must be a **.nojekyll** file in the **docs/** folder, otherwise GitHub does some voodoo that causes some filepaths not to work. This file is generated automatically by `oxforddown`'s knitting function.
+-   Note also that to deploy a BS4 book on GitHub Pages, there must be a **.nojekyll** file in the **docs/** folder, otherwise GitHub does some voodoo that causes some filepaths not to work. This file is generated automatically by `bio_uO_down`'s knitting function.
 
 #### Gitbook output (HTML)
 
@@ -182,7 +182,7 @@ knit: (function(input, ...) {
     ...
 ```
 
--   Note that to deploy a gitbook on GitHub Pages, there must be a **.nojekyll** file in the **docs/** folder, otherwise GitHub does some voodoo that causes some filepaths not to work. This file is generated automatically by `oxforddown`'s knitting function.
+-   Note that to deploy a gitbook on GitHub Pages, there must be a **.nojekyll** file in the **docs/** folder, otherwise GitHub does some voodoo that causes some filepaths not to work. This file is generated automatically by `bio_uO_down`'s knitting function.
 
 #### Word output
 
@@ -220,7 +220,7 @@ The file **templates/brief_template.tex** formats the chapter in the OxThesis st
 ## Customisations and extensions
 
 -   for common things you might want to do in your thesis, read through the sample content
--   the ['Customisations and extensions' chapter](https://ulyngs.github.io/oxforddown/customisations-and-extensions.html) (thanks \@bmvandoren!) has tips on how to include PDF pages from a published typeset article in your thesis, and much more!
+-   the ['Customisations and extensions' chapter](https://ulyngs.github.io/bio_uO_down/customisations-and-extensions.html) (thanks \@bmvandoren!) has tips on how to include PDF pages from a published typeset article in your thesis, and much more!
 
 ## Limitations
 

@@ -2,7 +2,7 @@
 
 ::: {.row}
 :::::: {.col-sm-6}
-Welcome to the `bs4` output from the [`oxforddown`](https://github.com/ulyngs/oxforddown) thesis template for [R Markdown](https://rmarkdown.rstudio.com). 
+Welcome to the `bs4` output from the [`bio_uO_down`](https://github.com/ulyngs/bio_uO_down) thesis template for [R Markdown](https://rmarkdown.rstudio.com). 
 To view/download the PDF output, [click here](_main.pdf) (or click the cover image).
 Enjoy!
 
