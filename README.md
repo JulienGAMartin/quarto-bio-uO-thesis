@@ -112,7 +112,7 @@ Read the ['How to use' chapter](https://ulyngs.github.io/bio_uO_down/how-to-use.
 
 Note: bibliography files cannot have underscores in their names!
 
-For how to use R Markdown syntax in general and in `bio_uO_down` in particular, read the dedicated chapters on this ([R Markdown basics](https://ulyngs.github.io/bio_uO_down/rmd-basics.html), [Citations, cross-references, and collaboration](https://ulyngs.github.io/bio_uO_down/cites-and-refs.html), and [Tables](https://ulyngs.github.io/bio_uO_down/tables.html)).
+For how to use R Markdown syntax in general and in `bio_uO_down` in particular, read the dedicated chapters on this ([R Markdown basics](https://ulyngs.github.io/bio_uO_down/qmd-basics.html), [Citations, cross-references, and collaboration](https://ulyngs.github.io/bio_uO_down/cites-and-refs.html), and [Tables](https://ulyngs.github.io/bio_uO_down/tables.html)).
 
 See also the general, official R Markdown resources [*R Markdown: The Definitive Guide*](https://bookdown.org/yihui/rmarkdown/) and the [*R Markdown Cookbook*](https://bookdown.org/yihui/rmarkdown-cookbook/).
 
@@ -124,7 +124,7 @@ I am in the process of updating the tutorial videos to v3 - I've noted below whi
 - [Part 2: Building a single chapter](https://youtu.be/8vcO252Us6g)
 - [(*old but informative*) Part 3: Understanding the file structure](https://www.youtube.com/watch?v=jafgJobOgpc)
 - [(*old but informative*) Part 4: A walk-through example of creating your thesis](https://www.youtube.com/watch?v=uWpinaVSZ6Q)
-- [~~Part 5: The content included in index.Rmd (or: why the introduction chapter is special)~~](https://www.youtube.com/watch?v=FPlwCj5ZH8M)
+- [~~Part 5: The content included in index.qmd (or: why the introduction chapter is special)~~](https://www.youtube.com/watch?v=FPlwCj5ZH8M)
 - [(*old but informative*) Part 6: Adjusting the order of chapters](https://www.youtube.com/watch?v=-0M3TuDnu7Y)
 - [(*old but informative*) Part 7: \_bookdown.yml: Adjusting build settings](https://www.youtube.com/watch?v=jXYfC8RXTvg)
 - [~~Part 8: Makefile: Adjusting build settings~~](https://www.youtube.com/watch?v=L6mV8z32RfE)
@@ -133,18 +133,18 @@ I am in the process of updating the tutorial videos to v3 - I've noted below whi
 
 ### Writing your thesis
 
--   update the YAML header (the stuff at the top between '---') in **index.Rmd** with your name, college, etc.
--   write the individual chapters as **.Rmd** files in the root folder
--   write the front matter (abstract, acknowledgements, abbreviations) and back matter (appendices) by adjusting the **.Rmd** files in the **front-and-back-matter/** folder
+-   update the YAML header (the stuff at the top between '---') in **index.qmd** with your name, college, etc.
+-   write the individual chapters as **.qmd** files in the root folder
+-   write the front matter (abstract, acknowledgements, abbreviations) and back matter (appendices) by adjusting the **.qmd** files in the **front-and-back-matter/** folder
 
-**.Rmd** files you don't want included in the body text must be given file names that begin with an underscore (e.g. **front-and-back-matter/\_abstract.Rmd** and **front-and-back-matter/\_acknowledgements.Rmd**).
+**.qmd** files you don't want included in the body text must be given file names that begin with an underscore (e.g. **front-and-back-matter/\_abstract.qmd** and **front-and-back-matter/\_acknowledgements.qmd**).
 (Alternatively, specify manually in **\_bookdown.yml** which files should be merged into the body text.)
 
 ### Building your entire thesis
 
--   Build the entire thesis by opening **index.Rmd** and clicking the 'knit' button.
+-   Build the entire thesis by opening **index.qmd** and clicking the 'knit' button.
 -   The generated thesis files are saved in the **docs/** folder
--   To choose output formats, go to the top of **index.Rmd**'s YAML header and edit the line `thesis_formats <- "pdf";` to the format(s) you want (options are "pdf", "bs4", "gitbook", and "word")
+-   To choose output formats, go to the top of **index.qmd**'s YAML header and edit the line `thesis_formats <- "pdf";` to the format(s) you want (options are "pdf", "bs4", "gitbook", and "word")
 -   You can build to multiple formats simultaneously with, e.g., `thesis_formats <- c("pdf", "bs4", "word")`
 -   If you want to customise the build function, edit **scripts_and_filters/knit-functions.R**
 
@@ -158,7 +158,7 @@ knit: (function(input, ...) {
 
 ![](figures/sample-content/screenshots/compiled_pdf.png)
 
-When you build the entire thesis to PDF, Latex generates a whole bunch of auxillary files - these are automatically removed after the build process end by the custom knit function that is used when you knit **index.Rmd**.
+When you build the entire thesis to PDF, Latex generates a whole bunch of auxillary files - these are automatically removed after the build process end by the custom knit function that is used when you knit **index.qmd**.
 
 To change how this removal is done, edit **scripts_and_filters/knit-functions.R**.
 The line `file.remove(list.files(pattern = "*\\.(log|mtc\\d*|maf|aux|bcf|lof|lot|out|toc)$"))` within `if ("pdf" %in% output_format){` is the one that removes files after PDF output is generated.
@@ -198,7 +198,7 @@ knit: (function(input, ...) {
 
 To knit an individual chapter without compiling the entire thesis:
 
-1.  open the **.Rmd** file of a chapter
+1.  open the **.qmd** file of a chapter
 2.  add a YAML header specifying the output format(s) (e.g. `bookdown::word_document2` for a word document you might want to upload to Google Docs for feedback from collaborators)
 3.  click the `knit` button (the output file is then saved in the root folder)
 
@@ -215,7 +215,7 @@ bibliography: references.bib
 
 The file **templates/brief_template.tex** formats the chapter in the OxThesis style but without including the front matter (table of contents, abstract, etc).
 
-**NOTE:** The bibliography path in your individual chapters' YAML headers needs to be identical to the one in **index.Rmd** - otherwise your individual chapters' bibliography path may override the path in **index.Rmd** and cause trouble when you knit the entire thesis.
+**NOTE:** The bibliography path in your individual chapters' YAML headers needs to be identical to the one in **index.qmd** - otherwise your individual chapters' bibliography path may override the path in **index.qmd** and cause trouble when you knit the entire thesis.
 
 ## Customisations and extensions
 

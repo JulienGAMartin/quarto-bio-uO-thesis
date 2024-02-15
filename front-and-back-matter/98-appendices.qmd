@@ -9,7 +9,7 @@
 
 This first appendix includes an R chunk that was hidden in the document (using `echo = FALSE`) to help with readibility:
 
-**In 02-rmd-basics-code.Rmd**
+**In 02-qmd-basics-code.qmd**
 
 ```{r ref.label='chunk-parts', eval=FALSE, echo = TRUE}
 ```

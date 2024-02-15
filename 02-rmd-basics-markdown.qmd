@@ -1,16 +1,3 @@
----
-#########################################
-# options for knitting a single chapter #
-#########################################
-output:
-  bookdown::pdf_document2:
-    template: templates/template.tex
-  bookdown::html_document2: default
-  bookdown::word_document2: default
-documentclass: book
-#bibliography: [bibliography/references.bib, bibliography/additional-references.bib]
----
-
 ```{block type='savequote', quote_author='(ref:cicero-quote)', include=knitr::is_latex_output()}
 Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
 
@@ -25,7 +12,7 @@ ii) include=knitr::opts_knit$get('rmarkdown.pandoc.to') == 'latex' means that th
 iii) You can't use markdown syntax inside chunk options, so if you want to e.g. italicise a book name in the quote reference use a 'text reference': Create a named piece of text with '(ref:label-name) My text', then link to this in the chunk option with quote_author='(ref:label-name)'
 -->
 
-# R Markdown basics {#rmd-basics}
+# R Markdown basics {#qmd-basics}
 \minitoc <!-- this will include a mini table of contents-->
 
 <!-- LaTeX normally does not indent the first line after a heading - however, it does so after the mini table of contents. You can manually tell it not to with \noindent -->
@@ -39,7 +26,7 @@ iii) You can't use markdown syntax inside chunk options, so if you want to e.g. 
 Be careful with your spacing. 
 While whitespace largely is ignored, it does at times give markdown signals as to how to proceed. 
 As a habit, try to keep everything left aligned whenever possible, especially as you type a new paragraph. 
-In other words, there is no need to indent basic text in the Rmd document (in fact, it might cause your text to do funny things if you do).
+In other words, there is no need to indent basic text in the qmd document (in fact, it might cause your text to do funny things if you do).
 
 ### Italics and bold
 - *Italics* are done like \*this\* or \_this\_
@@ -189,7 +176,7 @@ Common chunk options include (see e.g. [bookdown.org](https://bookdown.org/yihui
 ### Setup chunks - setup, images, plots
 An R Markdown document usually begins with a chunk that is used to **load libraries**, and to **set default chunk options** with `knitr::opts_chunk$set`.
 
-In your thesis, this will probably happen in **index.Rmd** and/or as opening chunks in each of your chapters.
+In your thesis, this will probably happen in **index.qmd** and/or as opening chunks in each of your chapters.
 
 ````
 `r ''````{r setup, include=FALSE}

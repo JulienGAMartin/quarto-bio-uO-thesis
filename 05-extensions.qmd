@@ -1,13 +1,3 @@
----
-output:
-  #bookdown::html_document2: default
-  #bookdown::word_document2: default
-  bookdown::pdf_document2: 
-    template: templates/template.tex
-documentclass: book
-#bibliography: [bibliography/references.bib, bibliography/additional-references.bib]
----
-
 ```{block type='savequote', include=knitr::is_latex_output(), quote_author='(ref:darwin-quote)'}
 There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.
 ```
@@ -24,7 +14,7 @@ There is grandeur in this view of life, with its several powers, having been ori
 ## Chunk caching and the **\_bookdown\_files** folder
 If you set `cache=TRUE` in a code chunk, in order to cache its results if it's time-consuming to run see [the R Markdown documentation](https://bookdown.org/yihui/rmarkdown-cookbook/cache.html), then the files for the caching are stored in the **_bookdown_files** folder.
 
-If you don't use caching and you would like to just have the **_bookdown_files** folder deleted after the build process is complete, then set `allow_cache = FALSE` in **index.Rmd**'s call to `knit_thesis`.
+If you don't use caching and you would like to just have the **_bookdown_files** folder deleted after the build process is complete, then set `allow_cache = FALSE` in **index.qmd**'s call to `knit_thesis`.
 
 That is, your YAML should then look like this:
 
@@ -121,7 +111,7 @@ For larger chunks, like this paragraph or indeed entire figures, you can use the
 *Note that correction blocks cannot be included in word output.*
 
 ### Stopping corrections from being highlighted
-To turn off correction highlighting, go to the YAML header of **index.Rmd**, then:
+To turn off correction highlighting, go to the YAML header of **index.qmd**, then:
 
 - PDF output: set `corrections: false` \
 - HTML output: remove or comment out `- templates/corrections.css`
@@ -147,7 +137,7 @@ It works with both PDF and HTML output.
 ## Adding a second abstract (PDF)
 You may need two abstracts in your thesis, if you e.g. need both an abstract in English and some other language.
 
-You can add a second abstract in **index.Rmd** like so:
+You can add a second abstract in **index.qmd** like so:
 
 ``` yaml
 abstract-second-heading: "Resumé"
@@ -192,7 +182,7 @@ cat(stringr::str_c("\\newpage \\begin{center} \\makebox[\\linewidth][c]{\\includ
 ```
 
 
-## Including another paper in your thesis - R Markdown child document {#embed-rmd}
+## Including another paper in your thesis - R Markdown child document {#embed-qmd}
 
 Sometimes you want to include another paper you are currently writing as a chapter in your thesis.
 Above \@ref(embed-pdf), we described the simplest way to do this: include the other paper as a pdf.
@@ -210,7 +200,7 @@ Take this simple example (files for this are in [this GitHub repository](https:/
 
 ```markdown 
 |--paper_to_include
-|  |--my_paper.Rmd
+|  |--my_paper.qmd
 |  |--data
 |  |  |--cat_salt.csv
 |  |--figures
@@ -220,24 +210,24 @@ Take this simple example (files for this are in [this GitHub repository](https:/
 ```
 
 As the chart suggests, you have another folder, **paper_to_include/** living in the same containing folder as your thesis folder.
-In the **paper_to_include** folder, the file **my_paper.Rmd** is where you write the paper.
-In **my_paper.Rmd**, you read in a CSV file found in the subfolder **data/cats.csv**, and also an image from the subfolder **figures/cat.jpg**.
+In the **paper_to_include** folder, the file **my_paper.qmd** is where you write the paper.
+In **my_paper.qmd**, you read in a CSV file found in the subfolder **data/cats.csv**, and also an image from the subfolder **figures/cat.jpg**.
 
 ### Step 1: Include paper as a child document
-In your thesis folder, create an Rmd file for the chapter where you want to include another paper. 
+In your thesis folder, create an qmd file for the chapter where you want to include another paper. 
 Add one or more code chunks that include R Markdown files from that paper as child documents:
 
 ````markdown
 # Including an external chapter 
 
-`r ''````{r child = "../paper_to_include/my_paper.Rmd"}
+`r ''````{r child = "../paper_to_include/my_paper.qmd"}
 ```
 ````
 
 
 ### Step 2: Make file paths compatible
 Use [parameters](https://rmarkdown.rstudio.com/lesson-6.html) to adjust the file path of images based on values you set in the YAML header of an R Markdown file.
-In **my_paper.Rmd**, create a parameter called `other_path` and set it to an empty string:
+In **my_paper.qmd**, create a parameter called `other_path` and set it to an empty string:
 
 ```yaml
 ---
@@ -247,7 +237,7 @@ params:
 ---
 ```
 
-In **my_paper.Rmd**, put this at the start of the filepath when you read in data or include images:
+In **my_paper.qmd**, put this at the start of the filepath when you read in data or include images:
 
 ```r
 library(tidyverse)
@@ -257,7 +247,7 @@ cat_data <- read_csv(str_c(params$other_path, "data/cats.csv"))
 include_graphics(str_c(params$other_path, "figures/cat.jpg"))
 ```
 
-Finally, in your thesis folder's **index.Rmd** file, also create the parameter `other_path`.
+Finally, in your thesis folder's **index.qmd** file, also create the parameter `other_path`.
 But here, set it to where the **paper_to_include/** folder is relative to your thesis folder:
 
 ```yaml
@@ -273,7 +263,7 @@ Note that if you want to host an HTML version on your thesis online, you will ne
 Unless the paper you want to include is also written as a book, your header levels are probably going to be off.
 That is, the level 1 headers (\# Some header) you use for main sections in the other paper turns into chaper titles when included in your thesis.
 
-To avoid this, first _increment all heading levels by one in **paper_to_include/my_paper.Rmd**_ (\# Some header -> \#\# Some header).
+To avoid this, first _increment all heading levels by one in **paper_to_include/my_paper.qmd**_ (\# Some header -> \#\# Some header).
 Then in **paper_to_include/** create a [lua filter](https://bookdown.org/yihui/rmarkdown-cookbook/lua-filters.html#lua-filters) that decrements header levels by one: Create a text file, save it as **reduce_header_level.lua**, and give it the content below.
 
 ```lua
@@ -286,7 +276,7 @@ function Header(el)
 end
 ```
 
-In the YAML header of **paper_to_include/my_paper.Rmd**, use this filter:
+In the YAML header of **paper_to_include/my_paper.qmd**, use this filter:
 
 ```yaml
 ---
@@ -308,7 +298,7 @@ It might be that your figure widths when knitting your paper on its own, and whe
 You can again use parameters to set figure widths.
 
 Imagine you want figure width to be 80% of the page width when knitting your paper on its own, but 100% in your thesis.
-In **paper_to_include/my_paper.Rmd**, first add a parameter we could call `out_width` and set it to the string "80%":
+In **paper_to_include/my_paper.qmd**, first add a parameter we could call `out_width` and set it to the string "80%":
 
 ```yaml
 ---
@@ -322,7 +312,7 @@ output:
 ---
 ```
 
-Then, make sure use that parameter to set the output width when you include figures in **paper_to_include/my_paper.Rmd**:
+Then, make sure use that parameter to set the output width when you include figures in **paper_to_include/my_paper.qmd**:
 
 ````markdown
 `r ''````{r, out.width=params$out_width, fig.cap="A very funny cat"}
@@ -330,7 +320,7 @@ include_graphics(str_c(params$other_path, "figures/cat.jpg"))
 ```
 ````
 
-Finally, create the parameter `out_width` in your thesis' **index.Rmd** file:
+Finally, create the parameter `out_width` in your thesis' **index.qmd** file:
 
 ```yaml
 params:
@@ -350,7 +340,7 @@ See section \@ref(citation-appearance).
 The only drawbacks to letting pandoc handle citations is that (i) it does not support chapter bibliographies, (ii) if you're a LaTeX veteran, you might be more comfortable with `biblatex` or `natbib`.
 
 ### Using `biblatex` {#biblatex-custom}
-To use [biblatex](https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex) to handle citations, first uncomment this in **index.Rmd**, YAML header:
+To use [biblatex](https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex) to handle citations, first uncomment this in **index.qmd**, YAML header:
 
 ```markdown
 use-biblatex: true
@@ -378,7 +368,7 @@ If you would like chapter bibliographies, first add "refsection=chapter" to the 
 bib-latex-options: "refsection=chapter, style=authoryear, sorting=nyt, backend=biber, maxcitenames=2, useprefix, doi=true, isbn=false, uniquename=false"
 ```
 
-Second, set the parameter `insertHeadingInPDF: false` in **index.Rmd**, to suppress the inclusion of a 'References' heading at the end of the thesis.
+Second, set the parameter `insertHeadingInPDF: false` in **index.qmd**, to suppress the inclusion of a 'References' heading at the end of the thesis.
 
 ```markdown
 params:
@@ -393,7 +383,7 @@ Finally insert this line at the end of each chapter, to print the bibliographies
 
 
 ### Using `natbib` {#natbib-custom}
-To use [natbib](https://www.overleaf.com/learn/latex/Bibliography_management_with_natbib) to handle citations, first uncomment this in **index.Rmd**, YAML header:
+To use [natbib](https://www.overleaf.com/learn/latex/Bibliography_management_with_natbib) to handle citations, first uncomment this in **index.qmd**, YAML header:
 
 ```markdown
 use-natbib: true
@@ -413,18 +403,18 @@ To customise the appearance of citations, change what **.bst** file you point to
 
 ## Customizing the page headers and footers (PDF)
 
-This can now be done directly in **index.Rmd**'s YAML header.
+This can now be done directly in **index.qmd**'s YAML header.
 If you are a LaTeX expert and need further customisation that what's currently provided, you can tweak the relevant sections of **templates/template.tex** - the relevant code is beneath the line that begins `\usepackage{fancyhdr}`.
 
 ## Diving in to the OxThesis LaTeX template (PDF)
 For LaTeX minded people, you can read through **templates/template.tex** to see which additional customisation options are available as well as **templates/ociamthesis.cls** which supplies the base class.
 For example, **template.tex** provides an option for master's degree submissions, which changes identifying information to candidate number and includes a word count. 
-At the time of writing, you must set this directly in **template.tex** rather than from the YAML header in **index.Rmd**.
+At the time of writing, you must set this directly in **template.tex** rather than from the YAML header in **index.qmd**.
 
 
 ## Customising to a different university
 ### The minimal route
-If the front matter in the OxThesis LaTeX template is suitable to your university, customising `bio_uO_down` to your needs could be as simple as putting the name of your institution and the path to your university's logo in **index.Rmd**:
+If the front matter in the OxThesis LaTeX template is suitable to your university, customising `bio_uO_down` to your needs could be as simple as putting the name of your institution and the path to your university's logo in **index.qmd**:
 
 ```yaml
 university: University of You
@@ -432,7 +422,7 @@ university-logo: figures/your-logo-here.pdf
 ```
 
 ### Replacing the entire title page with your required content
-If you have a **.tex** file with some required front matter from your university that you want to replace the OxThesis template's title page altogether, you can provide a filepath to this file in **index.Rmd**.
+If you have a **.tex** file with some required front matter from your university that you want to replace the OxThesis template's title page altogether, you can provide a filepath to this file in **index.qmd**.
 `bio_uO_down`'s sample content includes and example of this --- if you use the YAML below, your front matter will look like this:
 
 ```yaml

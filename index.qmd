@@ -55,15 +55,15 @@ degree: Doctor of Philosophy
 degreedate: Michaelmas 2018
 dedication: For Yihui Xie
 acknowledgements: |
-  `r paste(readLines("front-and-back-matter/_acknowledgements.Rmd"), collapse = '\n  ')`
+  `r paste(readLines("front-and-back-matter/_acknowledgements.qmd"), collapse = '\n  ')`
 show-acknowledgements-in-toc: false
 abstract-heading: "Abstract"
 abstract: |
-  `r paste(readLines("front-and-back-matter/_abstract.Rmd"), collapse = "\n  ")`
+  `r paste(readLines("front-and-back-matter/_abstract.qmd"), collapse = "\n  ")`
 show-abstract-in-toc: false
 # add a second abstract with abstract-second-heading: "Abstract two", and abstract-second: "My abstract"
 abbreviations: |
-  `r paste(readLines("front-and-back-matter/_abbreviations.Rmd"), collapse = '\n  ')`
+  `r paste(readLines("front-and-back-matter/_abbreviations.qmd"), collapse = '\n  ')`
 
 #######################
 ## bibliography path ##
@@ -90,7 +90,7 @@ abbreviations-heading: List of Abbreviations
 
 
 ### citation and bibliography style ###
-# the title for the references section is created by front-and-back-matter/99-references_heading.Rmd, 
+# the title for the references section is created by front-and-back-matter/99-references_heading.qmd, 
 # but you can set it from here for convenience
 params:
   referenceHeading: "References"
@@ -201,11 +201,11 @@ source('scripts_and_filters/create_chunk_options.R')
 ```
 
 <!--
-Include the create_chunk_options chunk above at the top of your index.Rmd file
+Include the create_chunk_options chunk above at the top of your index.qmd file
 This will include code to create additional chunk options (e.g. for adding author references to savequotes)
 If you need to create your own additional chunk options, edit the file scripts/create_chunk_options.R
 -->
 
 <!-- This chunk includes the front page content in HTML output -->
-```{r ebook-welcome, child = 'front-and-back-matter/_welcome-ebook.Rmd', eval=knitr::is_html_output()}
+```{r ebook-welcome, child = 'front-and-back-matter/_welcome-ebook.qmd', eval=knitr::is_html_output()}
 ```

@@ -1,4 +1,4 @@
-<!-- This .Rmd file serves only to add the References heading, irrespective of output, and irrespective of whether you are using biblatex, natbib, or pandoc for references -->
+<!-- This .qmd file serves only to add the References heading, irrespective of output, and irrespective of whether you are using biblatex, natbib, or pandoc for references -->
 
 # `r params$referenceHeading` {-}
 

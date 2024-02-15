@@ -9,3 +9,5 @@ _main.run.xml
 _todo.md
 _bookdown_files
 _book/
+
+/.luarc.json

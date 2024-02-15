@@ -1,16 +1,3 @@
----
-#########################################
-# options for knitting a single chapter #
-#########################################
-output:
-  bookdown::pdf_document2:
-    template: templates/template.tex
-  bookdown::html_document2: default
-  bookdown::word_document2: default
-documentclass: book
-#bibliography: [bibliography/references.bib, bibliography/additional-references.bib]
----
-
 # Introduction {.unnumbered}
 
 ```{=tex}
@@ -19,7 +6,7 @@ documentclass: book
 ```
 <!-- For PDF output, include these two LaTeX commands after unnumbered chapter headings, otherwise the mini table of contents and the running header will show the previous chapter -->
 
-Welcome to `bio_uO_down` [@lyngsbio_uO_down2019], a thesis template for R Markdown that I created when writing [my own PhD thesis](https://ulyngs.github.io/phd-thesis/) at the University of Oxford.
+Welcome to `bio_uO_down` [@Martin_bio_uO_down_2024], a thesis template for R Markdown that I created when writing [my own PhD thesis](https://ulyngs.github.io/phd-thesis/) at the University of Oxford.
 This template allows you to write in R Markdown, while formatting the PDF output with the beautiful and time-tested [OxThesis LaTeX template](https://github.com/mcmanigle/OxThesis).
 The sample content is partly adapted from [`thesisdown`](https://github.com/ismayc/thesisdown) .
 

@@ -25,7 +25,7 @@
 %\documentclass[a4paper,nobind]{templates/ociamthesis}
 
 % As you can see from the line below, bio_uO_down uses the a4paper size, 
-% and passes in the binding option from the YAML header in index.Rmd:
+% and passes in the binding option from the YAML header in index.qmd:
 \documentclass[a4paper, $if(page-layout)$$page-layout$$else$nobind$endif$]{templates/ociamthesis}
 
 
@@ -98,7 +98,7 @@ $endif$
 \soulregister\pageref7
 
 %%%%% FIXING / ADDING THINGS THAT'S SPECIAL TO R MARKDOWN'S USE OF LATEX TEMPLATES
-% pandoc puts lists in 'tightlist' command when no space between bullet points in Rmd file,
+% pandoc puts lists in 'tightlist' command when no space between bullet points in qmd file,
 % so we add this command to the template
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -198,7 +198,7 @@ $endif$
 
 %%%%% BIBLIOGRAPHY SETUP
 % Note that your bibliography will require some tweaking depending on your department, preferred format, etc.
-% If you've not used LaTeX before, I recommend just using pandoc for citations -- this is what's used unless you specific e.g. "citation_package: natbib" in index.Rmd
+% If you've not used LaTeX before, I recommend just using pandoc for citations -- this is what's used unless you specific e.g. "citation_package: natbib" in index.qmd
 % If you're already a LaTeX pro and are used to natbib or something, modify as necessary.
 
 % this allows the latex template to handle pandoc citations
@@ -480,7 +480,7 @@ $body$
 $if(use-biblatex)$
 \setlength{\baselineskip}{0pt} % JEM: Single-space References
 
-% we are setting the title for the references section in front-and-back-matter/99-references_heading.Rmd
+% we are setting the title for the references section in front-and-back-matter/99-references_heading.qmd
 {\renewcommand*\MakeUppercase[1]{#1}%
 \printbibliography[heading=none]}
 
