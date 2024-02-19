@@ -10,13 +10,13 @@ but the recommended way is simply to use the quarto function within R or
 the system shell to install and use the template
 
 ``` r
-quarto::quarto_use_template("juliengamartin/biouOthesis")
+quarto::quarto_use_template("juliengamartin/quarto-biouOthesis")
 ```
 
 or in a terminal
 
 ``` bash
-quarto use template("juliengamartin/biouOthesis")
+quarto use template("juliengamartin/quarto-biouOthesis")
 ```
 
 [![](examples/cover.png)](examples/template.pdf)

@@ -28,13 +28,13 @@ This is a Quarto template that assists you in creating a University of Ottawa th
 
 
 ``` r
-quarto::quarto_use_template("juliengamartin/biouOthesis")
+quarto::quarto_use_template("juliengamartin/quarto-biouOthesis")
 ```
 
 or in a terminal
 
 ``` bash
-quarto use template("juliengamartin/biouOthesis")
+quarto use template("juliengamartin/quarto-biouOthesis")
 ```
 
 
