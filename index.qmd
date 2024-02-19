@@ -8,6 +8,10 @@ A thesis submitted for the degree of {{< meta degreetype >}} at the University o
 
 The abstract should outline the main approach and findings of the thesis and must not be more than 500 words.
 
+# Sommaire {-}
+
+The abstract but in french this time.
+
 # Declaration {-}
 
 #### Reproducibility statement
@@ -16,7 +20,7 @@ This thesis is written using Quarto with renv [@renv] to create a reproducible e
 
 This work is licensed under a [Creative Commons  Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-### Thesis including published works declaration
+#### Thesis including published works declaration
 
 I hereby declare that this thesis contains no material which has been accepted for the award of any other degree or diploma at any university or equivalent institution and that, to the best of my knowledge and belief, this thesis contains no material previously published or written by another person, except where due reference is made in the text of the thesis.
 
