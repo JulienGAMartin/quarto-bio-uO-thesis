@@ -1,211 +1,103 @@
----
-#####################
-##  output format  ##
-#####################
-# The lines below makes the 'knit' button build the entire thesis 
-# Edit the line 'thesis_formats <- "pdf"' to the format you want, and 
-# uncomment the corresponding output section
-# The format options are: 'pdf', 'bs4', 'gitbook', 'word'
-knit: (function(input, ...) {
-    thesis_formats <- "pdf";
-    
-    source("scripts_and_filters/knit-functions.R");
-    knit_thesis(input, thesis_formats, ...)
-  })
+::: {.content-visible when-format="html"}
 
-output:
-  bookdown::pdf_book:
-    template: templates/template.tex
-    latex_engine: xelatex
-    keep_tex: true
-    pandoc_args: "--lua-filter=scripts_and_filters/colour_and_highlight.lua"
-  # bookdown::bs4_book:
-  #   css:
-  #     - templates/bs4_style.css
-  #     - templates/corrections.css # remove to stop highlighting corrections
-  #   theme:
-  #     primary: "#6D1919"
-  #   repo: https://github.com/ulyngs/bio_uO_down
-  #   pandoc_args: "--lua-filter=scripts_and_filters/colour_and_highlight.lua"
-  # bookdown::gitbook:
-  #   css: templates/style.css
-  #   config:
-  #     sharing:
-  #       facebook: false
-  #       twitter: yes
-  #       all: false
-  # bookdown::word_document2:
-  #   toc: true
-  
+A thesis submitted for the degree of {{< meta degreetype >}} at the University of Ottawa, {{< meta affiliation >}}.
 
-#####################
-## thesis metadata ##
-#####################
-title: |
-  `bio_uO_down`: \
-  An uOttawa Biology Thesis \
-  Template for R Markdown
-author: Author Name
-college: Your College
-university: University of Oxford
-university-logo: templates/beltcrest.pdf
-university-logo-width: 5cm
-submitted-text: A thesis submitted for the degree of
-degree: Doctor of Philosophy
-degreedate: Michaelmas 2018
-dedication: For Yihui Xie
-acknowledgements: |
-  `r paste(readLines("front-and-back-matter/_acknowledgements.qmd"), collapse = '\n  ')`
-show-acknowledgements-in-toc: false
-abstract-heading: "Abstract"
-abstract: |
-  `r paste(readLines("front-and-back-matter/_abstract.qmd"), collapse = "\n  ")`
-show-abstract-in-toc: false
-# add a second abstract with abstract-second-heading: "Abstract two", and abstract-second: "My abstract"
-abbreviations: |
-  `r paste(readLines("front-and-back-matter/_abbreviations.qmd"), collapse = '\n  ')`
+:::
 
-#######################
-## bibliography path ##
-#######################
-bibliography: [bibliography/references.bib, bibliography/additional-references.bib]
+# Abstract {-}
 
-########################
-## PDF layout options ###
-#########################
-### submitting a master's thesis ###
-# set masters-submission: true for an alternative, anonymous title page with 
-# candidate number and word count
-masters-submission: false
-candidate-number: 123456
-word-count: "10,052"
+The abstract should outline the main approach and findings of the thesis and must not be more than 500 words.
 
-# if you want to use a different title page altogether, provide a path to a 
-# .tex file here and it will override the default Oxford one
-# alternative-title-page: templates/alt-title-page-example.tex
+# Declaration {-}
 
-### abbreviations ###
-abbreviations-width: 3.2cm
-abbreviations-heading: List of Abbreviations
+#### Reproducibility statement
+
+This thesis is written using Quarto with renv [@renv] to create a reproducible environment. All materials (including the data sets and source files) required to reproduce this document can be found at the Github repository [`github.com/youraccount/thesis`](https://github.com/youraccount/thesis).
+
+This work is licensed under a [Creative Commons  Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+### Thesis including published works declaration
+
+I hereby declare that this thesis contains no material which has been accepted for the award of any other degree or diploma at any university or equivalent institution and that, to the best of my knowledge and belief, this thesis contains no material previously published or written by another person, except where due reference is made in the text of the thesis.
+
+This thesis includes ?? original papers published in peer reviewed journals and ?? submitted publications. The core theme of the thesis is ??. The ideas, development and writing up of all the papers in the thesis were the principal responsibility of myself, the student, working within the Department of Econometrics & Business Statistics under the supervision of ??
+
+(The inclusion of co-authors reflects the fact that the work came from active collaboration between researchers and acknowledges input into team-based research.)
+
+In the case of (??insert chapter numbers) my contribution to the work involved the following:
 
 
-### citation and bibliography style ###
-# the title for the references section is created by front-and-back-matter/99-references_heading.qmd, 
-# but you can set it from here for convenience
-params:
-  referenceHeading: "References"
-
-# citation and reference options (pandoc) #
-csl: bibliography/apa.csl # try csl: bibliography/transactions-on-computer-human-interaction.csl for numerical citations
-refs-line-spacing: 6mm
-refs-space-between-entries: 1mm
-
-## biblatex options ##
-# use-biblatex: true # set to true, and set "output:bookdown::pdf_book: citation_package: biblatex"
-# bib-latex-options: "style=authoryear, sorting=nyt, backend=biber, maxcitenames=2, useprefix, doi=true, isbn=false, uniquename=false" #for science, you might want style=numeric-comp, sorting=none for numerical in-text citation with references in order of appearance
-
-## natbib options ##
-# use-natbib: true # set to true, and set "output:bookdown::pdf_book: citation_package: natbib"
-# natbib-citation-style: authoryear #for science, you might want numbers,square
-# natbib-bibliography-style: templates/ACM-Reference-Format.bst #e.g. "plainnat", unsrtnat, or path to a .bst file
-
-
-### correction highlighting ###
-corrections: true
-
-### link highlighting ###
-border-around-links: false # false = links have colored text; true = links have a border around them
-
-# Set the link text/border coloring here, in RGB. 
-# If printing a physical version of your thesis, you'll want to comment out all of these.
-urlcolor-rgb: "0,0,139"     # web addresses
-citecolor-rgb: "0,33,71"    # citations
-linkcolor-rgb: "0,0,139"    # links to sections in your thesis
-
-# Make page number, not text, be link in TOC, LOF, and LOT. Otherwise, section link
-# highlighting may look a bit excessive.
-toc-link-page-numbers: true
-
-### binding / margins ###
-page-layout: nobind #'nobind' for equal margins (PDF output), 'twoside' for two-sided binding (mirror margins and blank pages), leave blank for one-sided binding (left margin > right margin)
-
-### position of page numbers ###
-#C = center, R = right, L = left. If page layout is 'twoside', O = odd pages and E = even pages. E.g. RO,LE puts the page number to the right on odd pages and left on even pages
-ordinary-page-number-foot-or-head: foot #'foot' puts page number in footer, 'head' in header
-ordinary-page-number-position: C
-chapter-page-number-foot-or-head: foot #you may want it to be different on the chapter pages
-chapter-page-number-position: C
-
-### position of running header ###
-#C = center, R = right, L = left. If page layout is 'twoside', O = odd pages and E = even pages. E.g. RO,LE puts the page number to the right on odd pages and left on even pages
-running-header: true #indicate current chapter/section in header?
-running-header-foot-or-head: head
-running-header-position-leftmark: LO #marks the chapter. If layout is 'nobind', only this is used.
-running-header-position-rightmark: RE  #marks the section.
-
-
-### draft mark ###
-draft-mark: false # add a DRAFT mark?
-draft-mark-foot-or-head: foot ##'foot' = in footer, 'head' = in header
-draft-mark-position: C
-draft-mark-text: DRAFT on \today
-
-### section numbering ###
-section-numbering-depth: 2 # to which depth should headings be numbered?
-
-### tables of content ###
-table-of-contents: true # should there be one?
-toc-depth: 1 # to which depth should headings be included in table of contents?
-lof: true # include list of figures in front matter?
-lot: true # include list of tables in front matter?
-remove-mini-toc: false  # no mini-table of contents at start of each chapter? (for them to show up, this must be false, and you must also add \minitoc after the chapter titles)
-add-mini-lot: false  # include mini-list of tables by start of each chapter?
-add-mini-lof: false  # include mini-list of figures by start of each chapter?
-
-### code block spacing ###
-space-before-code-block: 10pt
-space-after-code-block: 8pt
-
-### linespacing ###
-linespacing: 22pt plus2pt # 22pt is official for submission & library copies
-frontmatter-linespacing: 17pt plus1pt minus1pt #spacing in roman-numbered pages (acknowledgments, table of contents, etc.)
-
-### title page
-title-page: true
-title-size: 22pt
-title-size-linespacing: 28pt
-gap-before-crest: 25mm
-gap-after-crest: 25mm
-
-### other stuff ###
-abstractseparate: false  # include front page w/ abstract for examination schools?
-includeline-num: false # show line numbering in PDF?
-no-line-wrapping-in-code: false # by default, we prevent lines in code blocks from going off into the margins -- set 'true' to override this
-
-
-#####################
-## output details  ##
-#####################
-link-citations: true
-documentclass: book
-always_allow_html: true #this allows html stuff in word (.docx) output
----
-
-
-```{r install_packages, include=FALSE}
-source('scripts_and_filters/install_packages_if_missing.R')
+```{r}
+#| message: false
+#| echo: false
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+tab <- tribble(
+  ~`Thesis chapter`, ~`Publication title`, ~Status, ~`Nature of student contribution`, ~`Nature coauthors' contribution`,
+  2, "The life cycle of Mongolian crickets", "Submitted", "Concept and data analysis, writing first draft", "Shu Xu, input into manuscript; Eddie Betts, input into manuscript"
+)
 ```
 
-```{r create_chunk_options, include=FALSE, eval=knitr::is_latex_output()}
-source('scripts_and_filters/create_chunk_options.R')
+::: {.content-visible when-format="html"}
+
+```{r}
+tab |>
+  kable() |>
+  row_spec(0, align = "l")
 ```
+
+:::
+
+::: {.content-visible when-format="pdf"}
+
+```{r}
+tab |>
+  kable(booktabs = TRUE, format = "latex") |>
+  kable_styling(full_width = TRUE, font_size = 10, latex_options = "scale_down") |>
+  column_spec(1, width = "1.2cm") |>
+  column_spec(c(2, 4:5), width = "2.6cm") |>
+  row_spec(0, align = "l", bold = TRUE)
+```
+
+:::
+
+I have renumbered sections of submitted or published papers in order to generate a consistent presentation within the thesis.
+
+Student name:
+
+Student signature:
+
+Date:
+
+I hereby certify that the above declaration correctly reflects the nature and extent of the student’s and co-authors’ contributions to this work. In instances where I am not the responsible author I have consulted with the responsible author to agree on the respective contributions of the authors.
+
+Main Supervisor name:
+
+Main Supervisor signature:
+
+Date:
+
+# Acknowledgements {-}
+
+I would like to thank my pet goldfish for ...
+
+> If you have engaged the services of a professional editor, you must provide their name and a brief description of the service rendered. If the professional editor's current or former area of academic specialisation is similar your own, this too should be stated as it may suggest to examiners that the editor's advice to the student has extended beyond guidance on English expression to affect the substance and structure of the thesis.
+
+> If you have used generative artificial intelligence (AI) technologies, you must include a written acknowledgment of the use and its extent. Your acknowledgement should at a minimum specify which technology was used, include explicit description on how the information was generated, and explain how the output was used in your work. Below is a suggested format:
+
+> “I acknowledge the use of [insert AI system(s) and link] to [specific use of generative artificial intelligence]. The output from these was used to [explain use].”
+
+> Free text section for you to record your acknowledgment and gratitude for the more general academic input and support such as financial support from grants and scholarships and the non-academic support you have received during the course of your enrolment. 
+
+> You may also wish to acknowledge significant and substantial contribution made by others to the research, work and writing represented and/or reported in the thesis. These could include significant contributions to: the conception and design of the project; non-routine technical work; analysis and interpretation of research data; drafting significant parts of the work or critically revising it so as to contribute to the interpretation.
+
+
+
 
 <!--
-Include the create_chunk_options chunk above at the top of your index.qmd file
-This will include code to create additional chunk options (e.g. for adding author references to savequotes)
-If you need to create your own additional chunk options, edit the file scripts/create_chunk_options.R
+The following line is required to generate toc, lof and lot, as well as change page numbering style. Do not remove
 -->
 
-<!-- This chunk includes the front page content in HTML output -->
-```{r ebook-welcome, child = 'front-and-back-matter/_welcome-ebook.qmd', eval=knitr::is_html_output()}
-```
+{{< include _extensions/juliengamartin/biouOthesis/end_frontmatter.tex >}}
+

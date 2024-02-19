@@ -11,3 +11,11 @@ _bookdown_files
 _book/
 
 /.luarc.json
+
+/.quarto/
+/.Rproj.user/
+/.quarto/
+/_book/
+/_freeze/
+*_files/
+*_cache/

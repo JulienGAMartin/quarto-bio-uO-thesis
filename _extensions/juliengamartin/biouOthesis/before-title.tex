@@ -1,0 +1,9 @@
+%% Tables
+\usepackage{booktabs,tabu}
+
+
+%% Chapter heading 
+\addtokomafont{chapterprefix}{\raggedleft}
+\renewcommand*{\chapterformat}{%
+\mbox{\chapappifchapterprefix{\nobreakspace}%
+\scalebox{3}{\color{gray}\thechapter}\enskip}}
