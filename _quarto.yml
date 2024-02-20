@@ -24,7 +24,7 @@ book:
       This thesis was built with <a href="https://quarto.org/">Quarto</a>.
   reader-mode: true
   search: true
-  repo-url: https://github.com/yourcaccount/thesis/
+  repo-url: https://github.com/juliengamartin/quarto-biouOthesis
   downloads: [pdf]
   navbar:
     background: light
