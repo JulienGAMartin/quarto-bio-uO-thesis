@@ -2,8 +2,18 @@
 \usepackage{booktabs,tabu}
 
 
+%header abd footer
+\usepackage[automark,headsepline,footsepline]{scrlayer-scrpage}
+\clearpairofpagestyles
+\cfoot[\pagemark]{\pagemark}
+\lehead{\headmark}
+\rohead{\headmark}
+\pagestyle{scrheadings}
+
 %% Chapter heading 
+%large number
 \addtokomafont{chapterprefix}{\raggedleft}
 \renewcommand*{\chapterformat}{%
 \mbox{\chapappifchapterprefix{\nobreakspace}%
 \scalebox{3}{\color{gray}\thechapter}\enskip}}
+

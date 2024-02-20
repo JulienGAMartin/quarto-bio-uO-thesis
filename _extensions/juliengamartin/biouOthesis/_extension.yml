@@ -20,6 +20,7 @@ contributes:
       classoption:
         - "chapterprefix=true"
         - "headings=big"
+        - "twoside=semi"
       pdf-engine: pdflatex
       papersize: letter
       fontsize: 11pt
