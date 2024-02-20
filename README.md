@@ -15,13 +15,13 @@ the system shell to install and use the template
 #  You might need the development version of the quarto R package that you can install with
 remotes::install_github("quarto-dev/quarto-r")
 
-quarto::quarto_use_template("juliengamartin/quarto-biouOthesis")
+quarto::quarto_use_template("juliengamartin/quarto-bio-uo-thesis")
 ```
 
 or in a terminal
 
 ``` bash
-quarto use template juliengamartin/quarto-biouOthesis
+quarto use template juliengamartin/quarto-bio-uo-thesis
 ```
 
 ## how to use it
@@ -51,7 +51,7 @@ Edit and add files as necessary see folder structure below
     │   └── cover.png
     └── _extensions                                <- folder with template info
         └── juliengamartin
-            └── biouOthesis
+            └── bio-uo-thesis
                 ├── before-title.tex
                 ├── end_frontmatter.tex
                 ├── _extension.yml

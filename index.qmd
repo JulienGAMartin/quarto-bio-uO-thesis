@@ -103,5 +103,5 @@ I would like to thank my pet goldfish for ...
 The following line is required to generate toc, lof and lot, as well as change page numbering style. Do not remove
 -->
 
-{{< include _extensions/juliengamartin/biouOthesis/end_frontmatter.tex >}}
+{{< include _extensions/juliengamartin/bio-uo-thesis/end_frontmatter.tex >}}
 

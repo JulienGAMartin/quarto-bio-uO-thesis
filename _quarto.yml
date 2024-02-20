@@ -24,7 +24,7 @@ book:
       This thesis was built with <a href="https://quarto.org/">Quarto</a>.
   reader-mode: true
   search: true
-  repo-url: https://github.com/juliengamartin/quarto-biouOthesis
+  repo-url: https://github.com/juliengamartin/quarto-bio-uo-thesis
   downloads: [pdf]
   navbar:
     background: light
@@ -45,6 +45,6 @@ csl: biblio/american-statistical-association.csl
 
 # Output format
 format:
-  biouOthesis-html:
+  bio-uo-thesis-html:
     cover-image: figures/cover.png
-  biouOthesis-pdf: default
+  bio-uo-thesis-pdf: default

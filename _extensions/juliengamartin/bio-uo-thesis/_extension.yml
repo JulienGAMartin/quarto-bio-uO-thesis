@@ -51,4 +51,4 @@ contributes:
       format-resources:
         - fonts.html
       include-in-header:
-        file: _extensions/juliengamartin/biouOthesis/fonts.html
+        file: _extensions/juliengamartin/bio-uo-thesis/fonts.html
