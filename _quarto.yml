@@ -6,6 +6,7 @@ execute:
 book:
   title: "Awesome thesis"
   author: "Bob Hette"
+# list files in order for your thesis 
   chapters:
     - text: "Front matter"
       file: index.qmd

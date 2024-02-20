@@ -6,6 +6,7 @@ format: gfm
 
 ```{r}
 #| include: false
+#| eval: false
 # Create pdf and png version of template
 library(tidyverse)
 library(quarto)
@@ -17,7 +18,7 @@ quarto_render(input = "index.qmd")
 image_read_pdf("_book/Awesome-thesis.pdf", pages = 1) |>
   image_montage(geometry = "x1000+25+35", tile = 1, bg = "grey92", shadow = TRUE) |>
   image_convert(format = "png") |>
-  image_write("examples/cover.png", )
+  image_write("figures/cover.png", )
 # Move pdf to examples folder
 fs::file_copy("_book/Awesome-thesis.pdf", "examples/template.pdf", overwrite = TRUE)
 ```
@@ -27,15 +28,56 @@ fs::file_copy("_book/Awesome-thesis.pdf", "examples/template.pdf", overwrite = T
 This is a Quarto template that assists you in creating a University of Ottawa thesis. You can fork or download the repository to get started but the recommended way is simply to use the quarto function within R or the system shell to install and use the template
 
 
+## How to get it
 ``` r
+#  You might need the development version of the quarto R package that you can install with
+remotes::install_github("quarto-dev/quarto-r")
+
 quarto::quarto_use_template("juliengamartin/quarto-biouOthesis")
 ```
 
 or in a terminal
 
 ``` bash
-quarto use template("juliengamartin/quarto-biouOthesis")
+quarto use template juliengamartin/quarto-biouOthesis
 ```
 
+## how to use it 
 
-[![](examples/cover.png)](examples/template.pdf)
+Edit and add files as necessary see folder structure below
+
+## Template structure
+
+```
+.
+├── 01-chap1.qmd                               <- first chapter
+├── 02-chap2.qmd                               <- second chapter
+├── App-A.qmd                                  <- first appendix
+├── App-B.qmd                                  <- second appendix
+├── index.qmd                                  <- contain the frontmatter of the thesis
+├── _quarto.yml                                <- file to specify project rendering with quarto
+├── README.md                                  <- info on how to use
+├── refs.qmd                                   <- bibliography in thesis
+├── biblio                                     <- folder for biblio
+│   ├── american-statistical-association.csl   <- biblio style
+│   ├── _packages.bib                          <- bib files of references
+│   └── thesisrefs.bib                         <- bib files of references
+├── data                                       <- folder for data used in thesis
+│   └── sales.csv
+├── examples                                   <- folder with example (can be removed)
+│   └── template.pdf
+├── figures                                    <- folder for figures/images
+│   └── cover.png
+└── _extensions                                <- folder with template info
+    └── juliengamartin
+        └── biouOthesis
+            ├── before-title.tex
+            ├── end_frontmatter.tex
+            ├── _extension.yml
+            ├── fonts.html
+            ├── title.tex
+            ├── toc.tex
+            └── uOttawa-crop.png
+```
+
+[![](figures/cover.png){height=200 fig-align="center"}](examples/template.pdf)
