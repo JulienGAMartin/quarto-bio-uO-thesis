@@ -33,10 +33,12 @@ book:
 
 
 # Thesis information
-degreetype: Doctor of Philosophy
+degree: Doctor of Philosophy
 submitted: 2024
-affiliation: Department of Biology
-degrees: 'M.Sc., University of Blablabla'
+supervisor: Julien Martin
+department: Department of Biology
+faculty: Faculty of Science
+#degrees: 'M.Sc., University of Blablabla'
 
 # Bibliography style information
 bibliography: [biblio/thesisrefs.bib, biblio/_packages.bib]

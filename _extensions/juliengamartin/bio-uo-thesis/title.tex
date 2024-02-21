@@ -4,16 +4,19 @@
 {\sf\thispagestyle{empty}%
    \null\vskip-.4cm%
 
-   \begin{center}\fontsize{24}{28}\sf
+   \begin{center}
+      \fontsize{24}{28}\sf
       \textbf{$title$}\\[2cm]
-         \null\vskip1cm%
-   \centerline{\includegraphics[width=12cm]{_extensions/juliengamartin/bio-uo-thesis/uOttawa-crop.png}}
+      %\usekomafont{title}{\huge $title$}\\[2cm]
+       \null\vskip1cm%
+   \centerline{\includegraphics[width=12cm]{_extensions/juliengamartin/bio-uo-thesis/uOttawa-crop-large.png}}
    \vspace*{4cm}
       \fontsize{18}{20}\sf $author$\\[0.2cm]
-      \fontsize{13}{15}\sf $degrees$
+       %\usekomafont{author}{$author$}\\[0.2cm]
+%      \fontsize{13}{15}\sf $degrees$
       \vfill
-      \fontsize{13}{15}\sf A thesis submitted for the degree of\\ $degreetype$\\ at the University of Ottawa in \number\the\year\\
-      $affiliation$
+      \fontsize{13}{15}\sf A thesis submitted for the degree of\\ $degree$\\ at the University of Ottawa in \number\the\year\\
+      $department$ \par
    \end{center}
    \newpage\mbox{}\thispagestyle{empty}\newpage
   }
