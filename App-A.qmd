@@ -1,8 +1,9 @@
 # R Packages
 
-This thesis was produced using all the following R packages
 
 ```{r}
+#| label: tbl-pkgs
+#| tbl-cap: "Packages used to generate this thesis"
 #| echo: FALSE
 #| message: false
 #| cache: false
@@ -15,8 +16,7 @@ pkgs <- cite_packages(
   bib.file = "biblio/_packages"
 )
 knitr::kable(
-  pkgs,
-  caption = "Table of packages used in this book"
+  pkgs
 )
 ```
 

@@ -15,8 +15,13 @@ The abstract but in french this time.
 # Declaration {-}
 
 #### Reproducibility statement
+```{r}
+r_vers <- function(){
+  paste0("v", version$major, ".", version$minor,",", version$nickname)
+}
+```
 
-This thesis is written using Quarto with renv [@renv] to create a reproducible environment. All materials (including the data sets and source files) required to reproduce this document can be found at the Github repository [`github.com/youraccount/thesis`](https://github.com/youraccount/thesis).
+This thesis was written using Quarto [@Quarto] and the R Statistical Software `r r_vers()` [@base], and the R packages listed in @tbl-pkgs. All materials (including the data sets and source files) required to reproduce this document can be found at the Github repository [`github.com/youraccount/thesis`](https://github.com/youraccount/thesis).
 
 This work is licensed under a [Creative Commons  Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
@@ -68,19 +73,8 @@ tab |>
 
 I have renumbered sections of submitted or published papers in order to generate a consistent presentation within the thesis.
 
-Student name:
-
-Student signature:
-
-Date:
-
 I hereby certify that the above declaration correctly reflects the nature and extent of the student’s and co-authors’ contributions to this work. In instances where I am not the responsible author I have consulted with the responsible author to agree on the respective contributions of the authors.
 
-Main Supervisor name:
-
-Main Supervisor signature:
-
-Date:
 
 # Acknowledgements {-}
 

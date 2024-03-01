@@ -41,7 +41,7 @@ faculty: Faculty of Science
 #degrees: 'M.Sc., University of Blablabla'
 
 # Bibliography style information
-bibliography: [biblio/thesisrefs.bib, biblio/_packages.bib]
+bibliography: [biblio/thesisrefs.bib, biblio/quarto.bib, biblio/_packages.bib]
 csl: biblio/american-statistical-association.csl
 
 
