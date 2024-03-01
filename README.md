@@ -26,9 +26,12 @@ quarto use template juliengamartin/quarto-bio-uo-thesis
 
 ## how to use it
 
+The template can generate a pdf document as well as an associated
+website to be hosted on github
+
 Edit and add files as necessary see folder structure below
 
-## Template structure
+### Template structure
 
     .
     ├── 01-chap1.qmd                               <- first chapter
@@ -60,4 +63,9 @@ Edit and add files as necessary see folder structure below
                 ├── toc.tex
                 └── uOttawa-crop.png
 
-[<img src="figures/cover.png" data-fig-align="center" height="200" />](examples/template.pdf)
+## Example
+
+Here is the source code for a minimal sample document:
+[template.qmd](template.qmd) with the [generated pdf
+output](examples/template.pdf) and the
+[website](https://juliengamartin.github.io/quarto-bio-uO-thesis/)

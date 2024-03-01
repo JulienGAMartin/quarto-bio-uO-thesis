@@ -17,7 +17,7 @@ The abstract but in french this time.
 #### Reproducibility statement
 ```{r}
 r_vers <- function(){
-  paste0("v", version$major, ".", version$minor,",", version$nickname)
+  paste0("v", version$major, ".", version$minor,", ", version$nickname)
 }
 ```
 
