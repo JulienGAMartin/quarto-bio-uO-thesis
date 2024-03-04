@@ -41,7 +41,7 @@ contributes:
     html:
       theme:
         - cosmo
-#        - thesis.scss
+        - thesis.scss
       fontsize: 16px
       mainfont: "Merriweather, serif"
       code-link: true

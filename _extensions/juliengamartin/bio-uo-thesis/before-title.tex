@@ -17,3 +17,14 @@
 \mbox{\chapappifchapterprefix{\nobreakspace}%
 \scalebox{3}{\color{gray}\thechapter}\enskip}}
 
+
+%% for toc 
+$if(toc)$
+$if(toc-title)$
+\renewcommand*\contentsname{$toc-title$}
+$endif$
+$if(colorlinks)$
+\hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$$endif$}
+$endif$
+\setcounter{tocdepth}{$toc-depth$}
+$endif$
