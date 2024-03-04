@@ -1,0 +1,24 @@
+# My second manuscript {#sec-ch2}
+
+::: {.center data-latex=""}
+
+Hette Bob, Tex Igor & Martin Julien
+
+:::
+
+Submitted to Journal of No-nonsense
+
+### Abstract {.unnumbered}
+
+## Introduction
+
+## Methods
+
+## Results
+
+## Discussion
+
+### Acknowledgements {.unnumbered}
+
+specific to the study as per your manuscript
+

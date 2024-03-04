@@ -1,5 +1,6 @@
 # R Packages
-
+<!-- if you want to use that, be sure to run the cell below before rendering the
+document for the first time -->
 
 ```{r}
 #| label: tbl-pkgs
@@ -13,7 +14,7 @@ pkgs <- cite_packages(
   output = "table",
   out.dir = ".",
   omit = NULL,
-  bib.file = "biblio/_packages"
+  bib.file = "biblio/packages"
 )
 knitr::kable(
   pkgs

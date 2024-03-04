@@ -4,22 +4,24 @@ execute:
   freeze: auto
 
 book:
-  title: "Awesome thesis"
-  author: "Bob Hette"
+  title: Awesome thesis
+  author: Bob Hette
 # list files in order for your thesis 
   chapters:
     - text: "Front matter"
       file: index.qmd
-    - "01-chap1.qmd"
-    - "02-chap2.qmd"
-    - "refs.qmd"
+    - introduction.qmd
+    - chap_1.qmd
+    - chap_2.qmd
+    - conclusion.qmd
+    - references.qmd
   appendices:
     - App-A.qmd
     - App-B.qmd
 # Info for website page (footer and navbar)    
   page-footer:
     left: |
-      By Bob Hette.
+      By Bob Hette, 2024
     right: |
       This thesis was built with <a href="https://quarto.org/">Quarto</a>.
   reader-mode: true
@@ -41,7 +43,7 @@ faculty: Faculty of Science
 #degrees: 'M.Sc., University of Blablabla'
 
 # Bibliography style information
-bibliography: [biblio/thesisrefs.bib, biblio/quarto.bib, biblio/_packages.bib]
+bibliography: [biblio/thesisrefs.bib, biblio/quarto.bib, biblio/packages.bib]
 csl: biblio/american-statistical-association.csl
 
 
