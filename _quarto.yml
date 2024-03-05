@@ -8,8 +8,10 @@ book:
   author: Bob Hette
 # list files in order for your thesis 
   chapters:
+  # do not modify
     - text: "Front matter"
       file: index.qmd
+  # change as needed
     - introduction.qmd
     - chap_1.qmd
     - chap_2.qmd
@@ -18,6 +20,7 @@ book:
   appendices:
     - App-A.qmd
     - App-B.qmd
+
 # Info for website page (footer and navbar)    
   page-footer:
     left: |

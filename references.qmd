@@ -1,4 +1,10 @@
-# Bibliography {-}
+# Bibliography {.unnumbered}
+
+<!--
+you can change the title from Bibliography to References 
+and have that section numbered in the table of content if you want 
+but everything else is done automatically so don't modify anything else
+-->
 
 ::: {#refs}
 :::
