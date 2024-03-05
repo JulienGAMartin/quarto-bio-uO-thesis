@@ -48,7 +48,8 @@ contributes:
       toc-title: "<b>Sections</b>"
       html-math-method: katex
       published-title: "Last updated"
-      format-resources:
-        - fonts.html
-      include-in-header:
-        file: _extensions/juliengamartin/bio-uo-thesis/fonts.html
+#      format-resources:
+#        - fonts.html
+      include-in-header: 
+        text: "<link href='https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather|Source Code Pro' rel='stylesheet'>"
+#file: _extensions/juliengamartin/bio-uo-thesis/fonts.html
