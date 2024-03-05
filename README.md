@@ -4,7 +4,7 @@
 
 # uOttawa (biology) Thesis Template
 
-This is a Quarto template that assists you in creating a University of
+This is a Quarto (https://quarto.org/) template that assists you in creating a University of
 Ottawa thesis. You can fork or download the repository to get started
 but the recommended way is simply to use the quarto function within R or
 the system shell to install and use the template
