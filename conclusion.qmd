@@ -5,3 +5,17 @@
 >  -- My stomach, 2023 --
 
 here you should provide some concluding remarks, discussion, ideas for future research, and so on. 
+
+This is a significant part of a manuscript-based dissertation. It is NOT simply 
+a summary of the manuscript chapters. It must include:
+a. A full analysis of the findings in the various chapters in light of current research in the 
+field
+b. Discussion of the overall significance and contribution of the research to the field of 
+study
+c. Discussion and conclusions relating the chapters to each other and the overall field
+d. Comments on strengths and weaknesses of the dissertation research
+e. Evaluation of current knowledge and proposals for new ideas related to the field of 
+study
+f. Presentation of the status of relevant working hypotheses
+g. Discussion of any potential applications of the research findings
+
