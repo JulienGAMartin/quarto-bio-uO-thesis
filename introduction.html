@@ -237,11 +237,12 @@ window.Quarto = {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title"><b>Sections</b></h2>
    
   <ul class="collapse">
-<li><a href="#quarto" id="toc-quarto" class="nav-link active" data-scroll-target="#quarto"><span class="header-section-number">1.1</span> Quarto</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">1.2</span> Data</a></li>
-  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures"><span class="header-section-number">1.3</span> Figures</a></li>
-  <li><a href="#results-from-analyses" id="toc-results-from-analyses" class="nav-link" data-scroll-target="#results-from-analyses"><span class="header-section-number">1.4</span> Results from analyses</a></li>
-  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables"><span class="header-section-number">1.5</span> Tables</a></li>
+<li><a href="#structure-of-a-thesis" id="toc-structure-of-a-thesis" class="nav-link active" data-scroll-target="#structure-of-a-thesis"><span class="header-section-number">1.1</span> Structure of a thesis</a></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto"><span class="header-section-number">1.2</span> Quarto</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">1.3</span> Data</a></li>
+  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures"><span class="header-section-number">1.4</span> Figures</a></li>
+  <li><a href="#results-from-analyses" id="toc-results-from-analyses" class="nav-link" data-scroll-target="#results-from-analyses"><span class="header-section-number">1.5</span> Results from analyses</a></li>
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables"><span class="header-section-number">1.6</span> Tables</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -260,14 +261,51 @@ window.Quarto = {
   
 
 
-</header><p>This is where you introduce the main ideas of your thesis, and an overview of the context and background.</p>
-<p>In a PhD, typically, Chapters 2–4 would contain your own contributions. Think of each of these as potential papers to be submitted to journals. Finally, Chapter 5 provides some concluding remarks, discussion, ideas for future research, and so on. Appendixes can contain additional material that don’t fit into any chapters, but that you want to put on record. For example, additional tables, output, etc.</p>
-<section id="quarto" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="quarto">
-<span class="header-section-number">1.1</span> Quarto</h2>
+</header><section id="structure-of-a-thesis" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="structure-of-a-thesis">
+<span class="header-section-number">1.1</span> Structure of a thesis</h2>
+<p>You start with the frontmatter, usually including abstract acknowledgements and declaration of co-authorship. Then, you have a general Introduction where you introduce the main ideas of your thesis, and an overview of the context and background. In a PhD, typically, Chapters 2–4 would contain your own contributions. Think of each of these as potential papers to be submitted to journals. Finally, Chapter 5 provides some concluding remarks, discussion, ideas for future research, and so on. Appendixes can contain additional material that don’t fit into any chapters, but that you want to put on record. For example, additional tables, output, etc.</p>
+<p>For a MSc thesis with only 1 manuscript, then the thesis will be composed of the frontmatter followed by the manuscript where each section of the manuscript (<em>e.g.</em> introduction, methods, …) is a chapter, and finished by the bibliography and appendices.</p>
+<section id="front-matter-index.qmd-file" class="level3"><h3 class="anchored" data-anchor-id="front-matter-index.qmd-file">Front Matter (index.qmd file)</h3>
+<p>It should include:</p>
+<ul>
+<li>an abstract (in both english and french)</li>
+<li>An author declaration</li>
+<li>Co-authorship statement listing the co-authors and detailling authors contributions for each chapter</li>
+<li>Acknowledgements</li>
+<li>Table of contents (automatically generated with Quarto)</li>
+<li>List of Tables (automatically generated with Quarto)</li>
+<li>List of Figures (automatically generated with Quarto)</li>
+</ul></section><section id="general-introduction" class="level3"><h3 class="anchored" data-anchor-id="general-introduction">General introduction</h3>
+<p>This is an overarching, unifying introduction to the dissertation as a whole. It must contain:</p>
+<ol type="a">
+<li>Introduction</li>
+<li>Literature review</li>
+<li>Information enabling a trained researcher reading the chapter to develop sufficient understanding of the field to understand the theme and questions/hypotheses of the dissertation</li>
+<li>Dissertation theme and objectives or hypotheses to be tested</li>
+</ol></section><section id="manuscript-chapters" class="level3"><h3 class="anchored" data-anchor-id="manuscript-chapters">Manuscript Chapters</h3>
+<p>Each subsequent chapter, aside from the General Conclusion, comprises a single manuscript (published, submitted, or nearly submitted). Importantly, however, a single, consistent format must be used, and chapters must be presented in a logical progression.</p>
+<ul>
+<li>You may include an introductory “Context” section for each chapter, to establish the overall flow within the thesis and to build a tie to previous chapters. If you have not included a <strong>Declaration of co-authorship</strong> in the frontmatter, this section should include an authorship statement to explain your role in the research, as well as the roles of any co-authors on the corresponding publication. Normally, it is expected that a PhD student will be the first author on any papers arising from their research.</li>
+<li>Supporting information (SI) also refered to as Electronic Suplementary Material or Appendices, should be provided as Appendices to the thesis.</li>
+<li>If the paper was a Communication or Report, you may have key details in the Supporting Information (SI). Any important elements in the SI, such as experimental details, should be integrated into the main body of the chapter. Less critical elements should be included at the end of the thesis as appendices.</li>
+<li>In some cases, subsequent developments in the field may change the conclusions of one of your published chapters. This may be mentioned in a final “Subsequent Advances” section following the conclusion of the chapter. This should be discussed with your supervisor.</li>
+<li>Not every paper you’ve published has to be included. If your contribution to a paper was minor (and you are not the first author), omit it. Talk to your supervisor about what you will include.</li>
+</ul></section><section id="general-conclusion" class="level3"><h3 class="anchored" data-anchor-id="general-conclusion">General Conclusion</h3>
+<p>This is a significant part of a manuscript-based dissertation. It is NOT simply a summary of the manuscript chapters. It must include:</p>
+<ol type="a">
+<li>A full analysis of the findings in the various chapters in light of current research in the field</li>
+<li>Discussion of the overall significance and contribution of the research to the field of study</li>
+<li>Discussion and conclusions relating the chapters to each other and the overall field</li>
+<li>Comments on strengths and weaknesses of the dissertation research</li>
+<li>Evaluation of current knowledge and proposals for new ideas related to the field of study</li>
+<li>Presentation of the status of relevant working hypotheses</li>
+<li>Discussion of any potential applications of the research findings</li>
+</ol></section></section><section id="quarto" class="level2" data-number="1.2"><h2 data-number="1.2" class="anchored" data-anchor-id="quarto">
+<span class="header-section-number">1.2</span> Quarto</h2>
 <p>In this template, the rest of the chapter shows how to use quarto. The big advantage of using quarto is that it allows you to include your R or Python code directly into your thesis, to ensure there are no errors in copying and pasting, and that everything is reproducible. It also helps you stay better organized.</p>
 <p>For details on using Quarto, see <a href="http://quarto.org" class="uri">http://quarto.org</a>.</p>
-</section><section id="data" class="level2" data-number="1.2"><h2 data-number="1.2" class="anchored" data-anchor-id="data">
-<span class="header-section-number">1.2</span> Data</h2>
+</section><section id="data" class="level2" data-number="1.3"><h2 data-number="1.3" class="anchored" data-anchor-id="data">
+<span class="header-section-number">1.3</span> Data</h2>
 <p>Included in this template is a file called <code>sales.csv</code>. This contains quarterly data on Sales and Advertising budget for a small company over the period 1981–2005. It also contains the GDP (gross domestic product) over the same period. All series have been adjusted for inflation. We can load in this data set using the following code:</p>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales</span> <span class="op">&lt;-</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org//reference/here.html">here</a></span><span class="op">(</span><span class="st">"data/sales.csv"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -279,8 +317,8 @@ window.Quarto = {
 <span>  <span class="fu">as_tsibble</span><span class="op">(</span>index <span class="op">=</span> <span class="va">Quarter</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Any data you use in your thesis can go into the <code>data</code> directory. The data should be in exactly the format you obtained it. Do no editing or manipulation of the data prior to including it in the <code>data</code> directory. Any data munging should be scripted and form part of your thesis files (possibly hidden in the output).</p>
-</section><section id="figures" class="level2" data-number="1.3"><h2 data-number="1.3" class="anchored" data-anchor-id="figures">
-<span class="header-section-number">1.3</span> Figures</h2>
+</section><section id="figures" class="level2" data-number="1.4"><h2 data-number="1.4" class="anchored" data-anchor-id="figures">
+<span class="header-section-number">1.4</span> Figures</h2>
 <p><a href="#fig-deaths" class="quarto-xref">Figure&nbsp;<span>1.1</span></a> shows time plots of the data we just loaded. Notice how figure captions and references work. Chunk names can be used as figure labels with <code>fig-</code> prefixed. Never manually type figure numbers, as they can change when you add or delete figures. This way, the figure numbering is always correct.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -294,14 +332,14 @@ Figure&nbsp;1.1: Quarterly sales, advertising and GDP data.
 </div>
 </div>
 </div>
-</section><section id="results-from-analyses" class="level2" data-number="1.4"><h2 data-number="1.4" class="anchored" data-anchor-id="results-from-analyses">
-<span class="header-section-number">1.4</span> Results from analyses</h2>
+</section><section id="results-from-analyses" class="level2" data-number="1.5"><h2 data-number="1.5" class="anchored" data-anchor-id="results-from-analyses">
+<span class="header-section-number">1.5</span> Results from analyses</h2>
 <p>We can fit a regression model to the sales data.</p>
 <p>If <span class="math inline">y_t</span> denotes the sales in quarter <span class="math inline">t</span>, <span class="math inline">x_t</span> denotes the corresponding advertising budget and <span class="math inline">z_t</span> denotes the GDP, then the resulting model is: <span id="eq-drm"><span class="math display">
   y_t = \beta x_t + \gamma z_t + \varepsilon_t
 \tag{1.1}</span></span> where <span class="math inline">\hat{\beta} = 1.85</span>, and <span class="math inline">\hat{\gamma} = 1.04</span>. We can reference this equation using <a href="#eq-drm" class="quarto-xref">Equation&nbsp;<span>1.1</span></a>.</p>
-</section><section id="tables" class="level2" data-number="1.5"><h2 data-number="1.5" class="anchored" data-anchor-id="tables">
-<span class="header-section-number">1.5</span> Tables</h2>
+</section><section id="tables" class="level2" data-number="1.6"><h2 data-number="1.6" class="anchored" data-anchor-id="tables">
+<span class="header-section-number">1.6</span> Tables</h2>
 <p>We can also make a nice summary table of the coefficients, as shown in <a href="#tbl-coef" class="quarto-xref">Table&nbsp;<span>1.1</span></a></p>
 <div class="cell">
 <div id="tbl-coef" class="cell quarto-float anchored">
