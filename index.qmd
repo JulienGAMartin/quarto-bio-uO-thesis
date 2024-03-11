@@ -78,6 +78,34 @@ I would like to thank my pet goldfish for ...
 > You may also wish to acknowledge significant and substantial contribution made by others to the research, work and writing represented and/or reported in the thesis. These could include significant contributions to: the conception and design of the project; non-routine technical work; analysis and interpretation of research data; drafting significant parts of the work or critically revising it so as to contribute to the interpretation.
 
 
+# Indigenous affirmation {.unnumbered}
+
+> Ni manàdjiyànànig Màmìwininì Anishinàbeg, ogog kà nàgadawàbandadjig iyo akì eko weshkad.
+> Ako nongom egawìkàd kì mìgiwewàdj.
+> Ni manàdjiyànànig kakina Anishinàbeg ondaje kaye ogog kakina eniyagizidjig enigokamigàg
+> Kanadàng eji ondàpinangig endàwàdjin Odàwàng.
+> Ninisidawinawànànig kenawendamòdjig kije kikenindamàwin; weshkinìgidjig kaye
+> kejeyàdizidjig.
+> Nigijeweninmànànig ogog kà nìgànì sòngideyedjig; weshkad, nongom; kaye àyànikàdj.
+
+> We pay respect to the Algonquin people, who are the traditional guardians of this land.
+> We acknowledge their longstanding relationship with this territory, which remains unceded.
+> We pay> respect to all Indigenous people in this region, from all nations across Canada, who call Ottawa home.
+> We acknowledge the traditional knowledge keepers, both young and old.
+> And we honour their courageous leaders: past, present, and future.
+
+This Indigenous Affirmation was written the Office of Indigenous Affairs at the University of
+Ottawa, in partnership with the Indigenous Education Council, Indigenous student groups, and
+members of the local Indigenous community (https://www.uottawa.ca/about-
+us/indigenous/indigenous-affirmation). This statement acknowledges that the University of
+Ottawa, including the Kerr lab where I completed work for this thesis, was built on the
+traditional territory of the Algonquin Nation. I collected all the data for this thesis within the
+boundary of the City of Ottawa, which includes the traditional territory of the Algonquin Nation
+and the Mohawk Nation (https://native-land.ca/). I acknowledge my own settler history, as well
+as the colonial history of the University of Ottawa. I will continue to educate myself on Canada’s
+colonial past and current Indigenous issues, and to leverage any power I have for
+(re)conciliation.
+
 
 
 <!--
