@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.29">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Awesome thesis - 1&nbsp; Introduction</title>
+<title>Awesome thesis – 1&nbsp; Introduction</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -147,7 +147,7 @@ window.Quarto = {
     <span class="navbar-title">PhD Thesis B. Hette</span>
     </a>
   </div>
-        <div class="quarto-navbar-tools tools-wide">
+        <div class="quarto-navbar-tools tools-wide tools-end">
     <a href="https://github.com/juliengamartin/quarto-bio-uo-thesis" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <a href="./Awesome-thesis.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
@@ -308,7 +308,7 @@ window.Quarto = {
 <span class="header-section-number">1.3</span> Data</h2>
 <p>Included in this template is a file called <code>sales.csv</code>. This contains quarterly data on Sales and Advertising budget for a small company over the period 1981–2005. It also contains the GDP (gross domestic product) over the same period. All series have been adjusted for inflation. We can load in this data set using the following code:</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales</span> <span class="op">&lt;-</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org//reference/here.html">here</a></span><span class="op">(</span><span class="st">"data/sales.csv"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sales</span> <span class="op">&lt;-</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/sales.csv"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">rename</span><span class="op">(</span>Quarter <span class="op">=</span> <span class="va">`...1`</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">mutate</span><span class="op">(</span></span>
 <span>    Quarter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"01-"</span>, <span class="va">Quarter</span><span class="op">)</span>, <span class="st">"%d-%b-%y"</span><span class="op">)</span>,</span>
@@ -341,6 +341,7 @@ Figure&nbsp;1.1: Quarterly sales, advertising and GDP data.
 </section><section id="tables" class="level2" data-number="1.6"><h2 data-number="1.6" class="anchored" data-anchor-id="tables">
 <span class="header-section-number">1.6</span> Tables</h2>
 <p>We can also make a nice summary table of the coefficients, as shown in <a href="#tbl-coef" class="quarto-xref">Table&nbsp;<span>1.1</span></a></p>
+<p>Again, when looking at the <code>.qmd</code> file notice the use of labels and references to automatically generate table numbers.</p>
 <div class="cell">
 <div id="tbl-coef" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-coef-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -356,18 +357,18 @@ Table&nbsp;1.1: Coefficients from the fitted model.
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">-438.98</td>
-<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">-438.977</td>
+<td style="text-align: right;">0.019</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">GDP</td>
-<td style="text-align: right;">1.04</td>
-<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">1.037</td>
+<td style="text-align: right;">0.021</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">AdBudget</td>
-<td style="text-align: right;">1.85</td>
-<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">1.852</td>
+<td style="text-align: right;">0.000</td>
 </tr>
 </tbody>
 </table>
@@ -376,10 +377,568 @@ Table&nbsp;1.1: Coefficients from the fitted model.
 </figure>
 </div>
 </div>
-<p>Again, notice the use of labels and references to automatically generate table numbers.</p>
+<section id="wide-table-landscape-page" class="level3"><h3 class="anchored" data-anchor-id="wide-table-landscape-page">Wide table (landscape page)</h3>
+<p>Her is how you can get a table on page with landscape orientation (<a href="#tbl-sideway" class="quarto-xref">Table&nbsp;<span>1.2</span></a>). You need to put the table in a pandoc div (delimited by :::) indicating the side way rotation</p>
+<p>here is an example for a table but it also works for figures just use <code>sidewaysfigure</code> instead of <code>sidewaystable</code></p>
+<div class="sidewaystable">
+<div class="cell">
+<div id="tbl-sideway" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sideway-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.2: This is a wide table
+</figcaption><div aria-describedby="tbl-sideway-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div>
+<div id="apftvdffxn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#apftvdffxn table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#apftvdffxn thead, #apftvdffxn tbody, #apftvdffxn tfoot, #apftvdffxn tr, #apftvdffxn td, #apftvdffxn th {
+  border-style: none;
+}
+
+#apftvdffxn p {
+  margin: 0;
+  padding: 0;
+}
+
+#apftvdffxn .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#apftvdffxn .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#apftvdffxn .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#apftvdffxn .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#apftvdffxn .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#apftvdffxn .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#apftvdffxn .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#apftvdffxn .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#apftvdffxn .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#apftvdffxn .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#apftvdffxn .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#apftvdffxn .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#apftvdffxn .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#apftvdffxn .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#apftvdffxn .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#apftvdffxn .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#apftvdffxn .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#apftvdffxn .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#apftvdffxn .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#apftvdffxn .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#apftvdffxn .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#apftvdffxn .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#apftvdffxn .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#apftvdffxn .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#apftvdffxn .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#apftvdffxn .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#apftvdffxn .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#apftvdffxn .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#apftvdffxn .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#apftvdffxn .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#apftvdffxn .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#apftvdffxn .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#apftvdffxn .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#apftvdffxn .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#apftvdffxn .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#apftvdffxn .gt_left {
+  text-align: left;
+}
+
+#apftvdffxn .gt_center {
+  text-align: center;
+}
+
+#apftvdffxn .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#apftvdffxn .gt_font_normal {
+  font-weight: normal;
+}
+
+#apftvdffxn .gt_font_bold {
+  font-weight: bold;
+}
+
+#apftvdffxn .gt_font_italic {
+  font-style: italic;
+}
+
+#apftvdffxn .gt_super {
+  font-size: 65%;
+}
+
+#apftvdffxn .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#apftvdffxn .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#apftvdffxn .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#apftvdffxn .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#apftvdffxn .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#apftvdffxn .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#apftvdffxn .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead><tr class="header gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="num" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">num</th>
+<th id="char" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">char</th>
+<th id="fctr" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">fctr</th>
+<th id="date" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">date</th>
+<th id="time" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">time</th>
+<th id="datetime" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">datetime</th>
+<th id="currency" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">currency</th>
+</tr></thead>
+<tbody class="gt_table_body">
+<tr class="odd gt_group_heading_row">
+<td colspan="8" id="grp_a" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">grp_a</td>
+</tr>
+<tr class="even gt_row_group_first">
+<td id="stub_1_1" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">row_1</td>
+<td class="gt_row gt_right" headers="grp_a stub_1_1 num">0,11</td>
+<td class="gt_row gt_left" headers="grp_a stub_1_1 char">apricot</td>
+<td class="gt_row gt_center" headers="grp_a stub_1_1 fctr">one</td>
+<td class="gt_row gt_right" headers="grp_a stub_1_1 date">jeu. 15/01/2015</td>
+<td class="gt_row gt_right" headers="grp_a stub_1_1 time">13:35</td>
+<td class="gt_row gt_right" headers="grp_a stub_1_1 datetime">Monday, January 1, 2018</td>
+<td class="gt_row gt_right" headers="grp_a stub_1_1 currency">49,95</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_2" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">row_2</td>
+<td class="gt_row gt_right" headers="grp_a stub_1_2 num">2,22</td>
+<td class="gt_row gt_left" headers="grp_a stub_1_2 char">banana</td>
+<td class="gt_row gt_center" headers="grp_a stub_1_2 fctr">two</td>
+<td class="gt_row gt_right" headers="grp_a stub_1_2 date">dim. 15/02/2015</td>
+<td class="gt_row gt_right" headers="grp_a stub_1_2 time">14:40</td>
+<td class="gt_row gt_right" headers="grp_a stub_1_2 datetime">Friday, February 2, 2018</td>
+<td class="gt_row gt_right" headers="grp_a stub_1_2 currency">17,95</td>
+</tr>
+<tr class="even">
+<td id="stub_1_3" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">row_3</td>
+<td class="gt_row gt_right" headers="grp_a stub_1_3 num">33,33</td>
+<td class="gt_row gt_left" headers="grp_a stub_1_3 char">coconut</td>
+<td class="gt_row gt_center" headers="grp_a stub_1_3 fctr">three</td>
+<td class="gt_row gt_right" headers="grp_a stub_1_3 date">dim. 15/03/2015</td>
+<td class="gt_row gt_right" headers="grp_a stub_1_3 time">15:45</td>
+<td class="gt_row gt_right" headers="grp_a stub_1_3 datetime">Saturday, March 3, 2018</td>
+<td class="gt_row gt_right" headers="grp_a stub_1_3 currency">1,39</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_4" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">row_4</td>
+<td class="gt_row gt_right" headers="grp_a stub_1_4 num">444,40</td>
+<td class="gt_row gt_left" headers="grp_a stub_1_4 char">durian</td>
+<td class="gt_row gt_center" headers="grp_a stub_1_4 fctr">four</td>
+<td class="gt_row gt_right" headers="grp_a stub_1_4 date">mer. 15/04/2015</td>
+<td class="gt_row gt_right" headers="grp_a stub_1_4 time">16:50</td>
+<td class="gt_row gt_right" headers="grp_a stub_1_4 datetime">Wednesday, April 4, 2018</td>
+<td class="gt_row gt_right" headers="grp_a stub_1_4 currency">65 100,00</td>
+</tr>
+<tr class="even gt_group_heading_row">
+<td colspan="8" id="grp_b" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">grp_b</td>
+</tr>
+<tr class="odd gt_row_group_first">
+<td id="stub_1_5" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">row_5</td>
+<td class="gt_row gt_right" headers="grp_b stub_1_5 num">5 550,00</td>
+<td class="gt_row gt_left" headers="grp_b stub_1_5 char">NA</td>
+<td class="gt_row gt_center" headers="grp_b stub_1_5 fctr">five</td>
+<td class="gt_row gt_right" headers="grp_b stub_1_5 date">ven. 15/05/2015</td>
+<td class="gt_row gt_right" headers="grp_b stub_1_5 time">17:55</td>
+<td class="gt_row gt_right" headers="grp_b stub_1_5 datetime">Saturday, May 5, 2018</td>
+<td class="gt_row gt_right" headers="grp_b stub_1_5 currency">1 325,81</td>
+</tr>
+<tr class="even">
+<td id="stub_1_6" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">row_6</td>
+<td class="gt_row gt_right" headers="grp_b stub_1_6 num">NA</td>
+<td class="gt_row gt_left" headers="grp_b stub_1_6 char">fig</td>
+<td class="gt_row gt_center" headers="grp_b stub_1_6 fctr">six</td>
+<td class="gt_row gt_right" headers="grp_b stub_1_6 date">lun. 15/06/2015</td>
+<td class="gt_row gt_right" headers="grp_b stub_1_6 time">NA</td>
+<td class="gt_row gt_right" headers="grp_b stub_1_6 datetime">Wednesday, June 6, 2018</td>
+<td class="gt_row gt_right" headers="grp_b stub_1_6 currency">13,26</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_7" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">row_7</td>
+<td class="gt_row gt_right" headers="grp_b stub_1_7 num">777 000,00</td>
+<td class="gt_row gt_left" headers="grp_b stub_1_7 char">grapefruit</td>
+<td class="gt_row gt_center" headers="grp_b stub_1_7 fctr">seven</td>
+<td class="gt_row gt_right" headers="grp_b stub_1_7 date">NA</td>
+<td class="gt_row gt_right" headers="grp_b stub_1_7 time">19:10</td>
+<td class="gt_row gt_right" headers="grp_b stub_1_7 datetime">Saturday, July 7, 2018</td>
+<td class="gt_row gt_right" headers="grp_b stub_1_7 currency">NA</td>
+</tr>
+<tr class="even">
+<td id="stub_1_8" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">row_8</td>
+<td class="gt_row gt_right" headers="grp_b stub_1_8 num">8 880 000,00</td>
+<td class="gt_row gt_left" headers="grp_b stub_1_8 char">honeydew</td>
+<td class="gt_row gt_center" headers="grp_b stub_1_8 fctr">eight</td>
+<td class="gt_row gt_right" headers="grp_b stub_1_8 date">sam. 15/08/2015</td>
+<td class="gt_row gt_right" headers="grp_b stub_1_8 time">20:20</td>
+<td class="gt_row gt_right" headers="grp_b stub_1_8 datetime">NA</td>
+<td class="gt_row gt_right" headers="grp_b stub_1_8 currency">0,44</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -414,18 +973,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -457,7 +1005,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -492,7 +1080,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
