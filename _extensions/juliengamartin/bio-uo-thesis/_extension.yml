@@ -21,7 +21,7 @@ contributes:
         - "chapterprefix=true"
         - "headings=big"
         - "twoside=semi"
-      pdf-engine: pdflatex
+      pdf-engine: xelatex
       papersize: letter
       fontsize: 11pt
       geometry:
