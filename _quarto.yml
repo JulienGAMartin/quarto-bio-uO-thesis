@@ -50,6 +50,13 @@ bibliography: [biblio/thesisrefs.bib, biblio/quarto.bib, biblio/packages.bib]
 csl: biblio/american-statistical-association.csl
 
 
+# use the following to add a citation from or dedication to someone
+# appears only on pdf version
+
+citation-start: Yo no soy, yo no soy, yo no soy
+citation-author: David Wosniack
+
+
 # Output format
 format:
   bio-uo-thesis-html:

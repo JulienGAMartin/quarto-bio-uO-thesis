@@ -1,0 +1,28 @@
+$if(title)$
+\maketitle
+$endif$
+
+%=========================================
+$if(citation-start)$
+\newpage{}
+\thispagestyle {empty}
+    
+    \vspace*{2cm}
+    
+    \begin{center}
+        \Large{\parbox{12cm}{
+            \begin{raggedright}
+            {\Large 
+                \textit{$citation-start$}
+            }
+$if(citation-author)$
+\par
+            \vspace{.5cm}\hfill{---$citation-author$---}
+$endif$
+            \end{raggedright}
+        }
+    }
+    \end{center}
+    
+    \newpage
+$endif$
