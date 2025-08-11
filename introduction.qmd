@@ -153,12 +153,19 @@ tidy(fit) |>
 ### Wide table (landscape page)
 
 Her is how you can get a table on page with landscape orientation (@tbl-sideway).
-You need to put the table in a pandoc div (delimited by :::) indicating the side way rotation
+You need to put the table in a pandoc div (delimited by :::) indicating the landscape rotation
 
-here is an example for a table but it also works for figures just use `sidewaysfigure`
-instead of `sidewaystable`
+here is an example for a table but it also works for figures or text
 
-::: {.sidewaystable data-latex=""}
+```md
+::: {.landscape}
+
+text,table or figure in landscape orientation
+
+:::
+```
+
+::: {.landscape}
 
 ```{r}
 #| label: tbl-sideway
@@ -186,3 +193,4 @@ exibble |>
 ```
 
 :::
+
